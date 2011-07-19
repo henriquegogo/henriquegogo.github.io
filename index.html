@@ -219,7 +219,7 @@
     // GITHUB
     $.getJSON("http://github.com/api/v2/json/repos/show/" + user.github + "?callback=?", function(json) {
       $('#projetos > .place').html("");
-      $.each(json.repositories, function(i, repository) {
+      $.each(json.repositories.reverse(), function(i, repository) {
         $('#projetos > .place').append('<a class="repository" href="http://github.com/' + repository.owner + '/' + repository.name + '" target="_blank"><h3>' + repository.name + '</h3>' + repository.description.substring(0,40) + '</a>');
       });
       $('#projetos').append('<a class="more" href="http://github.com/' + user.github + '" target="_blank">+ projetos</a>');
