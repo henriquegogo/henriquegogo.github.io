@@ -43,6 +43,8 @@
         var self = this;
         var view = new View(self);
         var facebookToken = "AAACEdEose0cBABZAd3IiJOQDdQUbsrYC4ZCbVKdI9ks4eOZCZAif3M9suU4MtCRNv1z3aFTXHaHQl4ZAPqu2sZCFLWoTQOsGCo1WYniVgckBxfEZCxwLNFI";
+        var githubId = "5814e822e2c279be6ef4";
+        var githubSecret = "d118f66ea06b329581e4f805b23db32ad9bad70c";
 
         $.getJSON("https://graph.facebook.com/" + data.facebook + "?metadata=1&access_token=" + facebookToken, function(resp) {
             self.bio = resp.bio;
@@ -51,7 +53,7 @@
             view.renderBio();
         });
 
-        $.getJSON("https://api.github.com/users/" + data.github + "/repos", function(resp) {
+        $.getJSON("https://api.github.com/users/" + data.github + "/repos?client_id=" + githubId + "&client_secret=" + githubSecret, function(resp) {
             self.avatar = "http://www.gravatar.com/avatar/" + resp[0].owner.gravatar_id + "?size=150";
             self.projects = [];
             
