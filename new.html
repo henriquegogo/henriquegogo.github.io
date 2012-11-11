@@ -42,7 +42,7 @@
     function Profile(data) {
         var self = this;
         var view = new View(self);
-        var facebookToken = "AAACEdEose0cBANPXdtve3h2yoCF2o7rsAxszmZAqVZCe4Wb0dCFYIb1QrKno1oCEHfLfZBNNk2G6Mwfm8Cvw6ZCp5D1SCFdRFcezQexKIzxS91xsT0TW";
+        var facebookToken = "AAACEdEose0cBABZAd3IiJOQDdQUbsrYC4ZCbVKdI9ks4eOZCZAif3M9suU4MtCRNv1z3aFTXHaHQl4ZAPqu2sZCFLWoTQOsGCo1WYniVgckBxfEZCxwLNFI";
 
         $.getJSON("https://graph.facebook.com/" + data.facebook + "?metadata=1&access_token=" + facebookToken, function(resp) {
             self.bio = resp.bio;
