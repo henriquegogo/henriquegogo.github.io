@@ -8,11 +8,89 @@
 </head>
 
 <body>
+    <pre>
     
+    </pre>
 </body>
 <script src="http://code.jquery.com/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript" src="http://platform.linkedin.com/in.js">
-    api_key: 47x4wlia2je1
-    authorize: true
+<script>
+    function View(model) {
+        this.renderPhoto = function() {
+            var avatar = $("<img>").attr("src", model.avatar);
+
+            $("body").prepend(avatar);
+        }
+
+        this.renderBio = function() {
+            $("body pre").append(model.name);
+            $("body pre").append(model.bio);
+        }
+
+        this.renderSlides = function() {
+            $("body").append(model.slideshow);
+        }
+
+        this.renderCodes = function() {
+            $("body").append(JSON.stringify(model.codes));
+        }
+
+        this.renderProjects = function() {
+            $("body").append(JSON.stringify(model.projects));
+        }
+    }
+
+    function Profile(data) {
+        var self = this;
+        var view = new View(self);
+        var facebookToken = "AAACEdEose0cBANPXdtve3h2yoCF2o7rsAxszmZAqVZCe4Wb0dCFYIb1QrKno1oCEHfLfZBNNk2G6Mwfm8Cvw6ZCp5D1SCFdRFcezQexKIzxS91xsT0TW";
+
+        $.getJSON("https://graph.facebook.com/" + data.facebook + "?metadata=1&access_token=" + facebookToken, function(resp) {
+            self.bio = resp.bio;
+            self.name = resp.name;
+
+            view.renderBio();
+        });
+
+        $.getJSON("https://api.github.com/users/" + data.github + "/repos", function(resp) {
+            self.avatar = "http://www.gravatar.com/avatar/" + resp[0].owner.gravatar_id + "?size=150";
+            self.projects = [];
+            
+            for (i in resp) {
+                self.projects.push({
+                    name: resp[i].name,
+                    description: resp[i].description,
+                    link: resp[i].html_url,
+                });
+            }
+
+            view.renderPhoto();
+            view.renderProjects();
+        });
+
+        $.getJSON("https://api.github.com/users/" + data.github + "/gists", function(resp) {
+            self.codes = [];
+
+            for (i in resp) {
+                self.codes.push({
+                    description: resp[i].description,
+                    link: resp[i].html_url,
+                });
+            }
+
+            view.renderCodes();
+        });
+
+        self.slideshow = $('<iframe frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:none;" allowfullscreen webkitallowfullscreen mozallowfullscreen>').attr("src", "http://www.slideshare.net/" + data.slideshare + "/slideshelf")
+                     .attr("width", "615px")
+                     .attr("height", "470px");
+
+        view.renderSlides();
+    }
+
+    var me = new Profile({
+        facebook: "henriquegogo",
+        github: "henriquegogo",
+        slideshare: "henriquegogo"
+    });
 </script>
 </html>
