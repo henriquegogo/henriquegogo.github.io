@@ -28,6 +28,12 @@
     </ul>
 </script>
 
+<script type="text/html" id="designs_template">
+    <% for (i in designs) { %>
+        <a href="<%= designs[i].image %>"><img src="<%= designs[i].thumb %>" title="<%= designs[i].description %>"></a>
+    <% } %>
+</script>
+
 <script src="http://code.jquery.com/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 <script>
 // Simple JavaScript Templating
@@ -80,6 +86,10 @@
 
         this.renderProjects = function() {
             $("body").append(tmpl("projects_template", model));
+        }
+        
+        this.renderDesigns = function() {
+            $("body").prepend(tmpl("designs_template", model));
         }
     }
 
@@ -142,15 +152,36 @@
                          .attr("width", "615px")
                          .attr("height", "470px");
 
-             callback();
+            callback();
 
-             return self;
+            return self;
+        };
+
+        self.fetchFlickr = function(callback) {
+            $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?id=" + data.flickr + "&lang=pt-br&tags=portfolio&format=json&jsoncallback=?", function(resp) {
+                self.designs = [];
+                var items = resp.items;
+
+                for (i in items) {
+                    self.designs.push({
+                        thumb: items[i].media.m.replace("_m.", "_s."),
+                        image: items[i].media.m.replace("_m.", "."),
+                        link: items[i].link,
+                        description: items[i].title,
+                    });
+                }
+
+                callback();
+            });
+
+            return self;
         };
     }
 
     var me = new Profile({
         github: "henriquegogo",
-        slideshare: "henriquegogo"
+        slideshare: "henriquegogo",
+        flickr: "34052227@N06"
     });
 
     var view = new View(me);
@@ -168,6 +199,9 @@
         
     }).fetchSlideshare(function() {
         view.renderSlides();
+        
+    }).fetchFlickr(function() {
+        view.renderDesigns();
     });
 </script>
 </html>
