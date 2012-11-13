@@ -7,11 +7,40 @@
     
 </head>
 
+<style>
+    html {
+        font-family: sans-serif;
+    }
+    .block {
+        margin: 5px;
+        padding: 20px;
+        width: 615px;
+        vertical-align: top;
+        background: #EEE;
+    }
+
+    #bio {
+        white-space: pre-wrap;
+    }
+    #designs {
+        overflow: hidden;
+        overflow-x: auto;
+        height: 170px;
+        white-space: nowrap;
+    }
+    #designs img {
+        height: 150px;
+    }
+</style>
+
 <body>
-    <pre>
-    
-    </pre>
+    <div id="bio" class="block"></div>
+    <div id="designs" class="block"></div>
+    <div id="slides" class="block"></div>
+    <div id="projects" class="block"></div>
+    <div id="codes" class="block"></div>
 </body>
+
 <script type="text/html" id="projects_template">
     <ul>
         <% for (i in projects) { %>
@@ -68,28 +97,28 @@
         this.renderPhoto = function() {
             var avatar = $("<img>").attr("src", model.avatar);
 
-            $("body").prepend(avatar);
+            $("#bio").prepend(avatar);
         }
 
         this.renderBio = function() {
-            $("body pre").append(model.name + "<br>");
-            $("body pre").append(model.bio);
+            $("#bio").append(model.name + "<br>")
+                     .append(model.bio);
         }
 
         this.renderSlides = function() {
-            $("body").append(model.slideshow);
+            $("#slides").append(model.slideshow);
         }
 
         this.renderCodes = function() {
-            $("body").append(tmpl("codes_template", model));
+            $("#codes").append(tmpl("codes_template", model));
         }
 
         this.renderProjects = function() {
-            $("body").append(tmpl("projects_template", model));
+            $("#projects").append(tmpl("projects_template", model));
         }
         
         this.renderDesigns = function() {
-            $("body").prepend(tmpl("designs_template", model));
+            $("#designs").prepend(tmpl("designs_template", model));
         }
     }
 
@@ -153,7 +182,7 @@
                          .attr("height", "470px");
 
             callback();
-
+            
             return self;
         };
 
@@ -164,7 +193,7 @@
 
                 for (i in items) {
                     self.designs.push({
-                        thumb: items[i].media.m.replace("_m.", "_s."),
+                        thumb: items[i].media.m,
                         image: items[i].media.m.replace("_m.", "."),
                         link: items[i].link,
                         description: items[i].title,
