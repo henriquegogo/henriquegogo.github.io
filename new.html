@@ -3,8 +3,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
-    <title>Desenvolvedor web e mobile com conhecimento em designer de interface</title>
-    
+    <title>My Personal Website</title>
 </head>
 
 <style>
@@ -139,7 +138,11 @@
 <body>
     <div class="body-container">
         <div class="column" style="width: 290px">
-            <div id="profile"><h1 class='name'></h1></div>
+            <div id="profile">
+                <h1 class="name"></h1>
+                <div id="sites">
+                </div>
+            </div>
             <div id="bio" class="box">Loading...</div>
             <div id="designs" class="box">
                 <h2>Designs</h2>
@@ -211,6 +214,12 @@
     <% } %>
 </script>
 
+<script type="text/html" id="sites_template">
+    <% for (i in sites) { %>
+        <a target="_blank" title="<%= sites[i].shortname %>" href="<%= sites[i].url %>"><img src="http://<%= sites[i].domain %>/favicon.ico" width="16"></a>
+    <% } %>
+</script>
+
 <script src="http://code.jquery.com/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 <script>
 // Simple JavaScript Templating
@@ -251,9 +260,15 @@
         this.renderBio = function() {
             $("#profile .name").html(model.name);
 
+            $("title").prepend(model.name + " - ");
+
             $("#bio").html("")
                      .append("<p>" + model.bio + "</p>")
                      .append("<br style='clear: both'>");
+        }
+
+        this.renderSites = function() {
+            $("#sites").html(tmpl("sites_template", model));
         }
 
         this.renderSlides = function() {
@@ -320,6 +335,7 @@
                 self.name = resp.entry[0].displayName;
                 self.bio = resp.entry[0].aboutMe;
                 self.avatar = resp.entry[0].thumbnailUrl + "?size=150";
+                self.sites = resp.entry[0].accounts;
 
                 callback();
             });
@@ -375,6 +391,7 @@
         me.fetchGravatar(function() {
             view.renderPhoto();
             view.renderBio();
+            view.renderSites();
         });
 
     }).fetchGists(function() {
