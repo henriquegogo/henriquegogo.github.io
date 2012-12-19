@@ -50,7 +50,7 @@
     #profile .avatar {
         float: left;
         width: 100px;
-        margin: 0 20px 0 0;
+        margin: 0 8px 0 0;
         vertical-align: middle;
         border-radius: 999px;
         -ms-border-radius: 999px;
@@ -66,9 +66,14 @@
         letter-spacing: -2px;
     }
 
-    #bio {
+    #bio .container {
         white-space: pre-wrap;
     }
+
+    #sites {
+        text-align: right;
+    }
+
     #designs .designs {
         overflow: hidden;
         overflow-x: auto;
@@ -140,10 +145,11 @@
         <div class="column" style="width: 290px">
             <div id="profile">
                 <h1 class="name"></h1>
-                <div id="sites">
-                </div>
             </div>
-            <div id="bio" class="box">Loading...</div>
+            <div id="bio" class="box">
+                <div id="sites"></div>
+                <div class="container">Loading...</div>
+            </div>
             <div id="designs" class="box">
                 <h2>Designs</h2>
                 <div class="container designs">
@@ -167,7 +173,7 @@
             <div id="projects" class="box">
                 <h2>Projects</h2>
                 <ul class="container block-list">
-                    <li>Loading...</li>
+                    <li class="item">Loading...</li>
                 </ul>
             </div>
         </div>
@@ -262,7 +268,7 @@
 
             $("title").prepend(model.name + " - ");
 
-            $("#bio").html("")
+            $("#bio .container").html("")
                      .append("<p>" + model.bio + "</p>")
                      .append("<br style='clear: both'>");
         }
