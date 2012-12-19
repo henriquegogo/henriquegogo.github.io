@@ -201,7 +201,7 @@
 <script type="text/html" id="projects_template">
     <% for (i in projects) { %>
         <li class="item">
-            <a href="<%= projects[i].link %>">
+            <a href="<%= projects[i].link %>" target="_blank">
                 <span class="title"><%= projects[i].name %></span>
                 <span class="description"><%= projects[i].description %></span>
             </a>
@@ -211,13 +211,13 @@
 
 <script type="text/html" id="codes_template">
     <% for (i in codes) { %>
-        <li><a href="<%= codes[i].link %>"><%= codes[i].description %></a></li>
+        <li><a href="<%= codes[i].link %>" target="_blank"><%= codes[i].description %></a></li>
     <% } %>
 </script>
 
 <script type="text/html" id="designs_template">
     <% for (i in designs) { %>
-        <a href="<%= designs[i].image %>"><img src="<%= designs[i].thumb %>" title="<%= designs[i].description %>"></a>
+        <a href="<%= designs[i].image %>" class="modal"><img src="<%= designs[i].thumb %>" title="<%= designs[i].description %>"></a>
     <% } %>
 </script>
 
@@ -380,10 +380,29 @@
             return self;
         };
     }
+</script>
 
-    // INIT
+<script>
+    $(document).on("click", ".modal", function() {
+        $(".modal-view").remove();
+
+        var imageSrc = $(this).attr("href");
+        var image = $("<img>").attr("src", imageSrc).attr("style", "box-shadow: 0 0 40px #000");
+        var modal = $("<div class='modal-view'>").attr("style","position: fixed; padding-top: 50px; top: 0; bottom: 0; left: 0; right: 0; z-index: 10; text-align: center; background: rgba(0, 0, 0, 0.5);");
+
+        modal.html(image)
+             .appendTo("body");
+
+        return false;
+
+    }).on("click", ".modal-view", function() {
+        $(this).remove();
+    });
+
     $("#profile .name").html(location.hostname.split(".")[0]);
+</script>
 
+<script>
     var me = new Profile({
         github: "henriquegogo",
         slideshare: "henriquegogo",
