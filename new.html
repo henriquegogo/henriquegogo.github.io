@@ -14,7 +14,7 @@
     }
     body {
         margin: 0;
-        padding-top: 40px;
+        padding-top: 30px;
         background: #E5E5E5;
         border-top: 7px solid #B50B1E;
         box-shadow: inset 0 0 8px #FFF;
@@ -30,6 +30,11 @@
         color: #B50B1E;
     }
 
+    .body-container {
+        margin: 0 auto;
+        width: 960px;
+    }
+
     .box {
         margin: 0 0 30px;
         padding: 10px;
@@ -43,7 +48,7 @@
         vertical-align: top;
     }
     
-    #name .avatar {
+    #profile .avatar {
         float: left;
         width: 100px;
         margin: 0 20px 0 0;
@@ -54,7 +59,7 @@
         -webkit-border-radius: 999px;
         box-shadow: 0 0 10px #888;
     }
-    #name .name {
+    #profile .name {
         margin: 0;
         font-size: 35px;
         font-weight: bold;
@@ -74,44 +79,136 @@
         max-height: 150px;
         vertical-align: middle;
     }
+
+    .line-list {
+        margin: 0 -10px -10px;
+        padding: 0;
+        list-style: none;
+        overflow: hidden;
+        overflow-y: auto;
+    }
+    .line-list a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #000;
+        border-top: 1px dotted #BBB;
+    }
+    .line-list a:hover {
+        background: #EEE;
+    }
+
+    .block-list {
+        padding: 0;
+    }
+    .block-list .item {
+        display: inline-block;
+    }
+    .block-list .item a {
+        display: inline-block;
+        margin: 10px;
+        padding: 10px;
+        width: 105px;
+        height: 70px;
+        font-size: 9px;
+        text-decoration: none;
+        color: #000;
+        vertical-align: top;
+        background: #FFF;
+        border: 1px solid #CCC;
+        border-radius: 4px;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        box-shadow: 0 0 5px #CCC;
+        -moz-box-shadow: 0 0 5px #CCC;
+        -webkit-box-shadow: 0 0 5px #CCC;
+    }
+    .block-list .item a:hover {
+        background: #EEE;
+    }
+    .block-list .item .title {
+        display: block;
+        margin: 0;
+        margin-bottom: 10px;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: center;
+    }
 </style>
 
 <body>
-    <div class="column" style="width: 400px">
-        <div id="name"></div>
-        <div id="bio" class="box"></div>
-        <div id="designs" class="box"></div>
-        <div id="codes" class="box"><h2>Codes and helpers</h2></div>
+    <div class="body-container">
+        <div class="column" style="width: 290px">
+            <div id="profile"><h1 class='name'></h1></div>
+            <div id="bio" class="box">Loading...</div>
+            <div id="designs" class="box">
+                <h2>Designs</h2>
+                <div class="container designs">
+                    Loading...
+                </div>
+            </div>
+            <div id="codes" class="box">
+                <h2>Codes and helpers</h2>
+                <ul class="container line-list" style="height: 350px">
+                    <li style="margin: 10px">Loading...</li>
+                </ul>
+            </div>
+        </div>
+        <div class="column" style="width: 626px">
+            <div id="slides" class="box">
+                <h2>Slides and presentations</h2>
+                <div class="container">
+                    Loading...
+                </div>
+            </div>
+            <div id="projects" class="box">
+                <h2>Projects</h2>
+                <ul class="container block-list">
+                    <li>Loading...</li>
+                </ul>
+            </div>
+        </div>
     </div>
-    <div class="column" style="width: 626px">
-        <div id="slides" class="box"><h2>Slides and presentations</h2></div>
-        <div id="projects" class="box"><h2>Projects</h2></div>
-    </div>
+
+<!-- ############################## GOOGLE ANALYTICS ############################## --> 
+<script type="text/javascript"> 
+ 
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-15042231-1']);
+  _gaq.push(['_setDomainName', '.gogs.com.br']);
+  _gaq.push(['_trackPageview']);
+ 
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+ 
+</script> 
+<!-- ############################################################################## --> 
 </body>
 
 <script type="text/html" id="projects_template">
-    <ul>
-        <% for (i in projects) { %>
-            <li><a href="<%= projects[i].link %>"><%= projects[i].name %></a> - <%= projects[i].description %></li>
-        <% } %>
-    </ul>
+    <% for (i in projects) { %>
+        <li class="item">
+            <a href="<%= projects[i].link %>">
+                <span class="title"><%= projects[i].name %></span>
+                <span class="description"><%= projects[i].description %></span>
+            </a>
+        </li>
+    <% } %>
 </script>
 
 <script type="text/html" id="codes_template">
-    <ul>
-        <% for (i in codes) { %>
-            <li><a href="<%= codes[i].link %>"><%= codes[i].description %></a></li>
-        <% } %>
-    </ul>
+    <% for (i in codes) { %>
+        <li><a href="<%= codes[i].link %>"><%= codes[i].description %></a></li>
+    <% } %>
 </script>
 
 <script type="text/html" id="designs_template">
-    <h2>Designs</h2>
-    <div class="designs">
     <% for (i in designs) { %>
         <a href="<%= designs[i].image %>"><img src="<%= designs[i].thumb %>" title="<%= designs[i].description %>"></a>
     <% } %>
-    </div>
 </script>
 
 <script src="http://code.jquery.com/jquery.min.js" type="text/javascript" charset="utf-8"></script>
@@ -148,30 +245,31 @@
         this.renderPhoto = function() {
             var avatar = $("<img class='avatar'>").attr("src", model.avatar);
 
-            $("#name").prepend(avatar);
+            $("#profile").prepend(avatar);
         }
 
         this.renderBio = function() {
-            $("#name").append("<h1 class='name'>" + model.name + "</h1>");
+            $("#profile .name").html(model.name);
 
-            $("#bio").append("<p>" + model.bio + "</p>")
+            $("#bio").html("")
+                     .append("<p>" + model.bio + "</p>")
                      .append("<br style='clear: both'>");
         }
 
         this.renderSlides = function() {
-            $("#slides").append(model.slideshow);
+            $("#slides .container").html(model.slideshow);
         }
 
         this.renderCodes = function() {
-            $("#codes").append(tmpl("codes_template", model));
+            $("#codes .container").html(tmpl("codes_template", model));
         }
 
         this.renderProjects = function() {
-            $("#projects").append(tmpl("projects_template", model));
+            $("#projects .container").html(tmpl("projects_template", model));
         }
         
         this.renderDesigns = function() {
-            $("#designs").prepend(tmpl("designs_template", model));
+            $("#designs .container").html(tmpl("designs_template", model));
         }
     }
 
@@ -259,6 +357,9 @@
             return self;
         };
     }
+
+    // INIT
+    $("#profile .name").html(location.hostname.split(".")[0]);
 
     var me = new Profile({
         github: "henriquegogo",
