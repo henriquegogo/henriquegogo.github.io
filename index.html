@@ -13,7 +13,7 @@
     }
     body {
         margin: 0;
-        padding-top: 30px;
+        padding: 30px 0;
         background: #E5E5E5;
         border-top: 7px solid #B50B1E;
         box-shadow: inset 0 0 8px #FFF;
@@ -139,6 +139,20 @@
         font-weight: bold;
         text-align: center;
     }
+
+    #contact-form {
+        position: fixed;
+        margin: 0 10px;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -ms-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+        border: 2px solid #AAA;
+        bottom: -588px;
+    }
+    #contact-form:hover {
+        bottom: -130px;
+    }
 </style>
 
 <body>
@@ -178,17 +192,11 @@
                 </ul>
             </div>
         </div>
-    </div>
 
-<!--Start of Zopim Live Chat Script-->
-<script type="text/javascript">
-window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
-d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
-_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute('charset','utf-8');
-$.src='//cdn.zopim.com/?rrvFpcRax3CAEQC9YoesPxzkGuP5ZnD3';z.t=+new Date;$.
-type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
-</script>
-<!--End of Zopim Live Chat Script-->
+        <div id="contact-form">
+        <iframe src="https://docs.google.com/spreadsheet/embeddedform?formkey=dHVobnA4dkc1cm1fcjlFWGJYSXJJUUE6MQ" width="936" height="623" frameborder="0" marginheight="0" marginwidth="0">Carregando...</iframe>
+        </div>
+    </div>
 
 <!-- ############################## GOOGLE ANALYTICS ############################## --> 
 <script type="text/javascript"> 
