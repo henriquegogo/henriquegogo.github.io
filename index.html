@@ -1,202 +1,300 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-
-    <title>My Personal Website</title>
-</head>
-
-<style>
-    html {
-        font-family: sans-serif;
-        font-size: 12px;
+<!DOCTYPE HTML> 
+<html> 
+<head> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"> 
+  <meta name="google-site-verification" content="U0P1vR_x-K3AyEcZnYum-Dq4LRgqeNg3Jve36Qql9n0" /> 
+  <title>Desenvolvedor Web, músico e designer. - Henrique Gogó</title> 
+ 
+  <script src="http://code.jquery.com/jquery-1.5.min.js" type="text/javascript"></script> 
+  <script src="http://www.google.com/jsapi" type="text/javascript"></script> 
+  <style> 
+  html {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 12px;
+    color: #333;
+    background: #CCCCCC;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#CCCCCC'); /* for IE */
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#CCCCCC)); /* for webkit browsers */
+    background: -moz-linear-gradient(top,  #FFFFFF,  #CCCCCC); /* for firefox 3.6+ */
+    background-attachment: fixed;
+  }
+  body {
+    margin: 0 auto;
+    width: 975px;
+  }
+  h2 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 17px;
+    text-transform: uppercase;
+  }
+  img {
+    border: none;
+  }
+  a {
+    text-decoration: none;
+    color: #00A;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .center {
+    text-align: center;
+  }
+  .box {
+    clear: both;
+    margin: 10px auto;
+    padding: 10px;
+    width: 600px;
+  }
+  .box.rounded {
+    background: #FFF;
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #CCC;
+    -moz-box-shadow: 0 0 5px #CCC;
+    -webkit-box-shadow: 0 0 5px #CCC;
+  }
+  #left {
+    float: left;  
+  }
+  #right {
+    float: right;
+  }
+  #right .box {
+    width: 320px;
+  }
+  img#avatar {
+    float: left;
+    margin-right: 20px;
+    border: 1px solid #DDD;
+    box-shadow: 2px 2px 10px #CCC;
+    -moz-box-shadow: 2px 2px 10px #CCC;
+    -webkit-box-shadow: 2px 2px 10px #CCC;
+  }
+  h1#nome {
+    margin: 0;
+  }
+  #video {
+    float: right;
+    margin-left: 10px;
+    margin-bottom: 30px;
+    border: 1px solid #DDD;
+    box-shadow: 0 0 5px #CCC;
+    -moz-box-shadow: 0 0 5px #CCC;
+    -webkit-box-shadow: 0 0 5px #CCC;
+  }
+  #twitter {
+    font-size: 15px;
+    color: #777;
+  }
+  #twitter a {
+    color: #888;
+  }
+  #projetos a,
+  #sites a {
+    clear: both;
+    display: block;
+  }
+  #projetos a.repository,
+  #sites a.site {
+    clear: none;
+    float: left;
+    display: block;
+    margin: 10px;
+    padding: 10px;
+    width: 105px;
+    font-size: 10px;
+    text-decoration: none;
+    color: #333;
+    background: #FAFAFA;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    box-shadow: 0 0 5px #CCC;
+    -moz-box-shadow: 0 0 5px #CCC;
+    -webkit-box-shadow: 0 0 5px #CCC;
+  }
+  #projetos a.repository {
+    height: 70px;
+  }
+  #projetos a.repository:hover {
+    background: #E9F2FF;
+  }
+  #projetos a.repository h3 {
+    margin: 0;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  #sites a.site {
+    height: 30px;
+  }
+  #sites a.site:hover {
+    background: #FDFCD9;
+  }
+  #portifolio img {
+    margin: 5px;
+  }
+  #right .links a {
+    display: block;
+    padding: 3px;
+  }
+  #fotos img {
+    margin: 0 2px;
+  }
+  #musicas a.source {
+    width: 92px;
+    background: url("http://cdn.last.fm/flatness/header/headersprite.1.png") -115px -162px;
+  }
+  a.source {
+    display: block;
+    float: right;
+    height: 30px;
+  }
+  a.source img {
+    height: 30px;
+  }
+  .more {
+    display: block;
+    text-align: right;
+  }
+  </style> 
+  <script> 
+  google.load("feeds", "1");
+ 
+  var user = {};
+  user.gravatar = "943753a9af1bd4a2f6466875ac5efccd";
+  user.contato = "https://spreadsheets.google.com/viewform?formkey=dHVobnA4dkc1cm1fcjlFWGJYSXJJUUE6MQ&ifq";
+  user.aboutme = "henriquegogo";
+  user.twitter = "henriquegogo";
+  user.facebook = "henriquegogo";
+  user.orkut = "10554372327654343666";
+  user.youtube = "henriquegogo";
+  user.github = "henriquegogo";
+  user.flickr = {};
+  user.flickr.self = "34052227@N06";
+  user.flickr.tag = "portifolio";
+  user.delicious = {};
+  user.delicious.self = "henriquegogo";
+  user.delicious.tag = "byme";
+  user.feed = "http://blog.gogs.com.br/rss";
+  user.slideshare = "henriquegogo";
+  user.gist = "henriquegogo";
+  user.twitpic = "henriquegogo";
+  user.lastfm = "henriquegogo";
+ 
+  $(document).ready(function() {
+    // GRAVATAR
+    $.getJSON("http://gravatar.com/" + user.gravatar + ".json?callback=?", function(json) {
+      $('#avatar').attr('src', json.entry[0].thumbnailUrl + '?size=80');
+    });
+    // ICONES
+    $('#aboutme_ico').attr('href', 'http://about.me/' + user.aboutme);
+    $('#twitter_ico').attr('href', 'http://twitter.com/' + user.twitter);
+    $('#facebook_ico').attr('href', 'http://facebook.com/' + user.facebook);
+    $('#orkut_ico').attr('href', 'http://www.orkut.com.br/Main#Profile?uid=' + user.orkut);
+    $('#youtube_ico').attr('href', 'http://youtube.com/' + user.youtube);
+    $('#contato_ico').attr('href', user.contato);
+    $('#contato').attr('href', user.contato);
+    // TWITTER
+    $.getJSON("http://twitter.com/status/user_timeline/" + user.twitter + ".json?callback=?", function(json) {
+      document.title = json[0].user.description + " - " + json[0].user.name;
+      $('#nome').html(json[0].user.name);
+      $('#site').html(json[0].user.url);
+      $('#site').attr('href', json[0].user.url);
+      $('#descricao').html(json[0].user.description);
+      $.each(json, function(i, tweet) {
+        if (!tweet.text.match("@") && $("#twitter i").html() == "Carregando...") {
+          $('#twitter i').html('"' + tweet.text + '"');
+          $('#twitter a').html("@" + tweet.user.screen_name);
+          $('#twitter a').attr("href", "http://twitter.com/" + user.twitter);
+        }
+      });
+    });
+    // YOUTUBE
+    $.getJSON("http://gdata.youtube.com/feeds/api/users/" + user.youtube + "/uploads?v=2&alt=jsonc", function(json) {
+      $("#video").attr("src", json.data.items[0].content[5]);
+    });
+    // GITHUB
+    $.getJSON("http://github.com/api/v2/json/repos/show/" + user.github + "?callback=?", function(json) {
+      $('#projetos > .place').html("");
+      $.each(json.repositories.reverse(), function(i, repository) {
+        $('#projetos > .place').append('<a class="repository" href="http://github.com/' + repository.owner + '/' + repository.name + '" target="_blank"><h3>' + repository.name + '</h3>' + repository.description.substring(0,40) + '</a>');
+      });
+      $('#projetos').append('<a class="more" href="http://github.com/' + user.github + '" target="_blank">+ projetos</a>');
+    });
+    // FLICKR
+    $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?id=" + user.flickr.self + "&lang=pt-br&tags=" + user.flickr.tag + "&format=json&jsoncallback=?", function(json) {
+      $('#portifolio > .place').html("");
+      $.each(json.items, function(i, item) {
+        var imgPequena = (item.media.m).replace("_m.jpg", "_s.jpg");
+        var imgGrande = (item.media.m).replace("_m.jpg", ".jpg");
+        var titulo = item.title;
+        $('#portifolio > .place').append('<a href="' + imgGrande + '" target="_blank"><img src="' + imgPequena + '" alt="' + titulo + '" title="' + titulo + '" /></a>');
+      });
+      $('#portifolio').append('<a class="more" href="' + json.link + '" target="_blank">+ imagens</a>');
+    });
+    // DELICIOUS
+    $.getJSON("http://feeds.delicious.com/v2/json/" + user.delicious.self + "/" + user.delicious.tag + "?callback=?", function(json) {
+      $('#sites > .place').html("");
+      $.each(json, function(i, site) {
+        $('#sites > .place').append('<a class="site" href="' + site.u + '" target="_blank">' + site.d.substring(0,40) + '</a>');
+      });
+      $('#sites').append('<a class="more" href="http://www.delicious.com/' + user.delicious.self + '/byme" target="_blank">+ sites</a>');
+    });
+    // GISTS
+    $.getJSON("http://gist.github.com/api/v1/json/gists/" + user.gist + "?callback=?", function(json) {
+      $('#scripts > .place').html("");
+      $.each(json.gists, function(i, script) {
+        $('#scripts > .place').append('<a href="https://gist.github.com/' + script.repo + '" target="_blank">' + script.description + '</a>');
+      });
+      $('#scripts').append('<a class="more" href="https://gist.github.com/' + json.gists[0].owner + '" target="_blank">+ scripts</a>');
+    });
+    // TWITPIC
+    $('#fotos > .place').html("");
+    $.getJSON("http://api.twitpic.com/2/users/show.jsonp?username=" + user.twitpic + "&callback=?", function(json) {
+      $.each(json.images, function(i, image) {
+        if (i <= 7) {
+          $('#fotos > .place').append('<a href="http://twitpic.com/' + image.short_id + '" target="_blank"><img src="http://twitpic.com/show/mini/' + image.short_id + '"></a>');
+        }
+      });
+      $('#fotos').append('<a class="more" href="http://twitpic.com/photos/' + json.username + '" target="_blank">+ imagens</a>');
+    });
+    // FEEDS
+    function feeds() {
+      // ARTIGOS
+      var artigos = new google.feeds.Feed(user.feed);
+      artigos.load(function(result) {
+        $('#artigos > .place').html("");
+        $("#artigos h2").html(result.feed.title);
+        $.each(result.feed.entries, function(i, post) {
+          $('#artigos > .place').append('<a href="' + post.link + '" target="_blank">' + post.title + '</a>');
+        });
+        $('#artigos').append('<a class="more" href="' + user.feed + '" target="_blank">+ artigos</a>');
+      });
+      // APRESENTACOES
+      var apresentacoes = new google.feeds.Feed("http://www.slideshare.net/rss/user/" + user.slideshare);
+      apresentacoes.load(function(result) {
+        $('#apresentacoes > .place').html("");
+        $.each(result.feed.entries, function(i, slide) {
+          $('#apresentacoes > .place').append('<a href="' + slide.link + '" target="_blank">' + slide.title + '</a>');
+        });
+        $('#apresentacoes').append('<a class="more" href="http://www.slideshare.net/' + user.slideshare + '" target="_blank">+ apresentações</a>');
+      });
+      // LASTFM
+      var musicas = new google.feeds.Feed("http://ws.audioscrobbler.com/1.0/user/" + user.lastfm + "/recenttracks.rss");
+      musicas.load(function(result) {
+        $('#musicas > .place').html("");
+        $.each(result.feed.entries, function(i, musica) {
+          $('#musicas > .place').append('<a href="' + musica.link + '" target="_blank">' + musica.title + '</a>');
+        });
+        $('#musicas').append('<a class="more" href="http://www.lastfm.com.br/user/' + user.lastfm + '" target="_blank">+ músicas</a>');
+      });
     }
-    body {
-        margin: 0;
-        padding: 30px 0;
-        background: #E5E5E5;
-        border-top: 7px solid #B50B1E;
-        box-shadow: inset 0 0 8px #FFF;
-    }
-
-    h2 {
-        margin: 0 0 10px;
-        text-transform: uppercase;
-        font-size: 20px;
-    }
-    h1:first-letter, 
-    h2:first-letter {
-        color: #B50B1E;
-    }
-
-    .body-container {
-        margin: 0 auto;
-        width: 960px;
-    }
-
-    .box {
-        margin: 0 0 30px;
-        padding: 10px;
-        vertical-align: top;
-        background: #FFF;
-        border-top: 7px solid #D5D5D5;
-    }
-    .column {
-        margin: 10px;
-        display: inline-block;
-        vertical-align: top;
-    }
-    
-    #profile .avatar {
-        float: left;
-        width: 100px;
-        margin: 0 8px 0 0;
-        vertical-align: middle;
-        border-radius: 999px;
-        -ms-border-radius: 999px;
-        -moz-border-radius: 999px;
-        -webkit-border-radius: 999px;
-        box-shadow: 0 0 10px #888;
-    }
-    #profile .name {
-        margin: 0;
-        font-size: 35px;
-        font-weight: bold;
-        text-transform: uppercase;
-        letter-spacing: -2px;
-        line-height: 32px;
-    }
-
-    #bio .container {
-        white-space: pre-wrap;
-    }
-
-    #sites {
-        text-align: right;
-    }
-
-    #designs .designs {
-        overflow: hidden;
-        overflow-x: auto;
-        white-space: nowrap;       
-    }
-    #designs img {
-        max-height: 150px;
-        vertical-align: middle;
-    }
-
-    .line-list {
-        margin: 0 -10px -10px;
-        padding: 0;
-        list-style: none;
-        overflow: hidden;
-        overflow-y: auto;
-    }
-    .line-list a {
-        display: block;
-        padding: 10px;
-        text-decoration: none;
-        color: #000;
-        border-top: 1px dotted #BBB;
-    }
-    .line-list a:hover {
-        background: #EEE;
-    }
-
-    .block-list {
-        padding: 0;
-    }
-    .block-list .item {
-        display: inline-block;
-    }
-    .block-list .item a {
-        display: inline-block;
-        margin: 10px;
-        padding: 10px;
-        width: 105px;
-        height: 70px;
-        font-size: 9px;
-        text-decoration: none;
-        color: #000;
-        vertical-align: top;
-        background: #FFF;
-        border: 1px solid #CCC;
-        border-radius: 4px;
-        -moz-border-radius: 4px;
-        -webkit-border-radius: 4px;
-        box-shadow: 0 0 5px #CCC;
-        -moz-box-shadow: 0 0 5px #CCC;
-        -webkit-box-shadow: 0 0 5px #CCC;
-    }
-    .block-list .item a:hover {
-        background: #EEE;
-    }
-    .block-list .item .title {
-        display: block;
-        margin: 0;
-        margin-bottom: 10px;
-        font-size: 15px;
-        font-weight: bold;
-        text-align: center;
-    }
-
-    #contact-form {
-        position: fixed;
-        margin: 0 10px;
-        -webkit-transition: all 0.5s ease-in-out;
-        -moz-transition: all 0.5s ease-in-out;
-        -ms-transition: all 0.5s ease-in-out;
-        transition: all 0.5s ease-in-out;
-        border: 2px solid #AAA;
-        bottom: -588px;
-    }
-    #contact-form:hover {
-        bottom: -130px;
-    }
-</style>
-
-<body>
-    <div class="body-container">
-        <div class="column" style="width: 290px">
-            <div id="profile">
-                <h1 class="name"></h1>
-            </div>
-            <div id="bio" class="box">
-                <div id="sites"></div>
-                <div class="container">Loading...</div>
-            </div>
-            <div id="designs" class="box">
-                <h2>Designs</h2>
-                <div class="container designs">
-                    Loading...
-                </div>
-            </div>
-            <div id="codes" class="box">
-                <h2>Codes and helpers</h2>
-                <ul class="container line-list" style="height: 350px">
-                    <li style="margin: 10px">Loading...</li>
-                </ul>
-            </div>
-        </div>
-        <div class="column" style="width: 626px">
-            <div id="slides" class="box">
-                <h2>Slides and presentations</h2>
-                <div class="container">
-                    Loading...
-                </div>
-            </div>
-            <div id="projects" class="box">
-                <h2>Projects</h2>
-                <ul class="container block-list">
-                    <li class="item">Loading...</li>
-                </ul>
-            </div>
-        </div>
-
-        <div id="contact-form">
-        <iframe src="https://docs.google.com/spreadsheet/embeddedform?formkey=dHVobnA4dkc1cm1fcjlFWGJYSXJJUUE6MQ" width="936" height="623" frameborder="0" marginheight="0" marginwidth="0">Carregando...</iframe>
-        </div>
-    </div>
+    google.setOnLoadCallback(feeds);
+  });
+  </script>
 
 <!-- ############################## GOOGLE ANALYTICS ############################## --> 
 <script type="text/javascript"> 
@@ -214,238 +312,71 @@
  
 </script> 
 <!-- ############################################################################## --> 
-</body>
-
-<script type="text/html" id="projects_template">
-    <% for (i in projects) { %>
-        <li class="item">
-            <a href="<%= projects[i].link %>" target="_blank">
-                <span class="title"><%= projects[i].name %></span>
-                <span class="description"><%= projects[i].description %></span>
-            </a>
-        </li>
-    <% } %>
-</script>
-
-<script type="text/html" id="codes_template">
-    <% for (i in codes) { %>
-        <li><a href="<%= codes[i].link %>" target="_blank"><%= codes[i].description %></a></li>
-    <% } %>
-</script>
-
-<script type="text/html" id="designs_template">
-    <% for (i in designs) { %>
-        <a href="<%= designs[i].image %>" class="modal"><img src="<%= designs[i].thumb %>" title="<%= designs[i].description %>"></a>
-    <% } %>
-</script>
-
-<script type="text/html" id="sites_template">
-    <% for (i in sites) { %>
-        <a target="_blank" title="<%= sites[i].shortname %>" href="<%= sites[i].url %>"><img src="http://<%= sites[i].domain %>/favicon.ico" width="16"></a>
-    <% } %>
-</script>
-
-<script src="http://code.jquery.com/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-<script>
-// Simple JavaScript Templating
-// John Resig - http://ejohn.org/ - MIT Licensed
-(function(){
-  var cache = {};
-  
-  this.tmpl = function tmpl(str, data){
-    var fn = !/\W/.test(str) ?
-      cache[str] = cache[str] ||
-        tmpl(document.getElementById(str).innerHTML) :
-      
-      new Function("obj",
-        "var p=[],print=function(){p.push.apply(p,arguments);};" +
-        "with(obj){p.push('" +
-        str
-          .replace(/[\r\t\n]/g, " ")
-          .split("<%").join("\t")
-          .replace(/((^|%>)[^\t]*)'/g, "$1\r")
-          .replace(/\t=(.*?)%>/g, "',$1,'")
-          .split("\t").join("');")
-          .split("%>").join("p.push('")
-          .split("\r").join("\\'")
-      + "');}return p.join('');");
-  
-  return data ? fn( data ) : fn;
-  };
-})();
-</script>
-<script>
-    function View(model) {
-        this.renderPhoto = function() {
-            var avatar = $("<img class='avatar'>").attr("src", model.avatar);
-
-            $("#profile").prepend(avatar);
-        }
-
-        this.renderBio = function() {
-            $("#profile .name").html(model.name);
-
-            $("title").prepend(model.name + " - ");
-
-            $("#bio .container").html("")
-                     .append("<p>" + model.bio + "</p>")
-                     .append("<br style='clear: both'>");
-        }
-
-        this.renderSites = function() {
-            $("#sites").html(tmpl("sites_template", model));
-        }
-
-        this.renderSlides = function() {
-            $("#slides .container").html(model.slideshow);
-        }
-
-        this.renderCodes = function() {
-            $("#codes .container").html(tmpl("codes_template", model));
-        }
-
-        this.renderProjects = function() {
-            $("#projects .container").html(tmpl("projects_template", model));
-        }
-        
-        this.renderDesigns = function() {
-            $("#designs .container").html(tmpl("designs_template", model));
-        }
-    }
-
-    function Profile(data) {
-        var self = this;
-        var githubId = "5814e822e2c279be6ef4";
-        var githubSecret = "d118f66ea06b329581e4f805b23db32ad9bad70c";
-
-        self.fetchGithubRepos = function(callback) {
-            $.getJSON("https://api.github.com/users/" + data.github + "/repos?client_id=" + githubId + "&client_secret=" + githubSecret, function(resp) {
-                data.gravatar = resp[0].owner.gravatar_id;
-
-                self.projects = [];
-                
-                for (i in resp) {
-                    self.projects.push({
-                        name: resp[i].name,
-                        description: resp[i].description,
-                        link: resp[i].html_url,
-                    });
-                }
-
-                callback();
-            });
-
-            return self;
-        };
-
-        self.fetchGists = function(callback) {
-            $.getJSON("https://api.github.com/users/" + data.github + "/gists", function(resp) {
-                self.codes = [];
-
-                for (i in resp) {
-                    self.codes.push({
-                        description: resp[i].description,
-                        link: resp[i].html_url,
-                    });
-                }
-
-                callback();
-            });
-            
-            return self;
-        };
-
-        self.fetchGravatar = function(callback) {
-            $.getJSON("http://www.gravatar.com/" + data.gravatar + ".json?callback=?", function(resp) {
-                self.name = resp.entry[0].displayName;
-                self.bio = resp.entry[0].aboutMe;
-                self.avatar = resp.entry[0].thumbnailUrl + "?size=150";
-                self.sites = resp.entry[0].accounts;
-
-                callback();
-            });
-
-            return self;
-        };
-
-        self.fetchSlideshare = function(callback) {
-            self.slideshow = $('<iframe frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:none;" allowfullscreen webkitallowfullscreen mozallowfullscreen>').attr("src", "http://www.slideshare.net/" + data.slideshare + "/slideshelf")
-                         .attr("width", "606px")
-                         .attr("height", "470px");
-
-            callback();
-            
-            return self;
-        };
-
-        self.fetchFlickr = function(callback) {
-            $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?id=" + data.flickr + "&lang=pt-br&tags=portfolio&format=json&jsoncallback=?", function(resp) {
-                self.designs = [];
-                var items = resp.items;
-
-                for (i in items) {
-                    self.designs.push({
-                        thumb: items[i].media.m,
-                        image: items[i].media.m.replace("_m.", "."),
-                        link: items[i].link,
-                        description: items[i].title,
-                    });
-                }
-
-                callback();
-            });
-
-            return self;
-        };
-    }
-</script>
-
-<script>
-    $(document).on("click", ".modal", function() {
-        $(".modal-view").remove();
-
-        var imageSrc = $(this).attr("href");
-        var image = $("<img>").attr("src", imageSrc).attr("style", "box-shadow: 0 0 40px #000");
-        var modal = $("<div class='modal-view'>").attr("style","position: fixed; padding-top: 50px; top: 0; bottom: 0; left: 0; right: 0; z-index: 10; text-align: center; background: rgba(0, 0, 0, 0.5);");
-
-        modal.html(image)
-             .appendTo("body");
-
-        return false;
-
-    }).on("click", ".modal-view", function() {
-        $(this).remove();
-    });
-
-    $("#profile .name").html(location.hostname.split(".")[0]);
-</script>
-
-<script>
-    var me = new Profile({
-        github: "henriquegogo",
-        slideshare: "henriquegogo",
-        flickr: "34052227@N06"
-    });
-
-    var view = new View(me);
-
-    me.fetchGithubRepos(function() {
-        view.renderProjects();
-
-        me.fetchGravatar(function() {
-            view.renderPhoto();
-            view.renderBio();
-            view.renderSites();
-        });
-
-    }).fetchGists(function() {
-        view.renderCodes();
-        
-    }).fetchSlideshare(function() {
-        view.renderSlides();
-        
-    }).fetchFlickr(function() {
-        view.renderDesigns();
-    });
-</script>
-</html>
+</head> 
+<body> 
+<div id="left"> 
+  <div class="box"> 
+    <iframe id="video" width="180" height="160" frameborder="0"></iframe> 
+    <img id="avatar"> 
+    <h1 id="nome"></h1> 
+    <a id="aboutme_ico" target="_blank" title="about.me"><img src="http://wac.2659.edgecastcdn.net/802659/production72/images/icons/favicon.ico" width="16"></a> 
+    <a id="twitter_ico" target="_blank" title="twitter"><img src="http://twitter.com/phoenix/favicon.ico" width="16"></a> 
+    <a id="facebook_ico" target="_blank" title="facebook"><img src="http://facebook.com/favicon.ico" width="16"></a> 
+    <a id="orkut_ico" target="_blank" title="orkut"><img src="http://static1.orkut.com/img/castro/newdesignbadge.png" width="16"></a> 
+    <a id="youtube_ico" target="_blank" title="YouTube"><img src="http://www.youtube.com/favicon.ico" width="16"></a> 
+    <a id="contato_ico" target="_blank" title="Contato"><img src="http://static.ak.fbcdn.net/rsrc.php/v1/yg/r/V8Yrm0eKZpi.gif" width="16"> Entrar em contato</a><br> 
+    <p id="descricao"></p> 
+    <p id="twitter"><img src="http://twitter.com/phoenix/favicon.ico"> <i>Carregando...</i> <small><a target="_blank"></a></small></p> 
+  </div> 
+  <div id="projetos" class="box rounded"> 
+    <a href="http://www.github.com" class="source" target="_blank"><img src="https://github.com/images/modules/header/logov3.png"></a> 
+    <h2>Projetos</h2> 
+    Projetos open source desenvolvidos por mim.
+    <div class="place"><small>Carregando...</small></div> 
+  </div> 
+  <div id="portifolio" class="box rounded"> 
+    <a href="http://www.flickr.com" class="source" target="_blank"><img src="http://l.yimg.com/g/images/flickr-logo-stacked-pt-br.png.v3"></a> 
+    <h2>Design</h2> 
+    Layouts de sites, sistemas, logomarcas e identidade visual.
+    <div class="place"><small>Carregando...</small></div> 
+  </div> 
+  <div id="sites" class="box rounded"> 
+    <a href="http://www.delicious.com" class="source" target="_blank"><img src="http://l.yimg.com/hr/15013611/img/delicious.48px.gif"></a> 
+    <h2>Sites</h2> 
+    Sites desenvolvidos por mim, ou que participei do desenvolvimento.
+    <div class="place"><small>Carregando...</small></div> 
+  </div>
+  <div class="box center"> 
+    Este site contém apenas um arquivo e consulta os diversos serviços utilizando AJAX com jQuery.<br> 
+    Desenvolvido por <a href="http://www.gogs.com.br">Henrique Gogó</a>.<br> 
+    <a id="contato_rodape" href="#" target="_blank">Entrar em contato</a>.
+  </div> 
+</div> 
+<div id="right"> 
+  <div id="artigos" class="box rounded links"> 
+    <h2>Artigos</h2> 
+    <div class="place"><small>Carregando...</small></div> 
+  </div> 
+  <div id="apresentacoes" class="box rounded links"> 
+    <a href="http://www.slideshare.net/" class="source" target="_blank"><img src="http://public.slidesharecdn.com/images/layout-09/header_logo.png"></a> 
+    <h2>Apresentações</h2> 
+    <div class="place"><small>Carregando...</small></div> 
+  </div> 
+  <div id="scripts" class="box rounded links"> 
+    <a href="https://gist.github.com/" class="source" target="_blank"><img src="http://gist.github.com/images/modules/header/logo_gist.png"></a> 
+    <h2>Scripts</h2> 
+    <div class="place"><small>Carregando...</small></div> 
+  </div> 
+  <div id="musicas" class="box rounded links"> 
+    <a href="http://www.lastfm.com.br/" class="source" target="_blank"></a> 
+    <h2>Last.fm</h2> 
+    <div class="place"><small>Carregando...</small></div> 
+  </div> 
+  <div id="fotos" class="box rounded"> 
+    <a href="http://twitpic.com/" class="source" target="_blank"><img src="http://twitpic.com/images/logo-main.png"></a> 
+    <h2>Fotos e Imagens</h2> 
+    <div class="place"><small>Carregando...</small></div> 
+  </div> 
+</div>
+</body> 
+</html> 
