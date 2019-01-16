@@ -1,0 +1,75 @@
+html {
+    height: 150%;
+}
+body {
+    font-family: Georgia, serif;
+    color: #EEEEEF;
+    background: no-repeat #222225;
+    background-image: linear-gradient(#000, #222225);
+}
+a {
+    color: #EEEEEF;
+}
+nav {
+    padding: 10px 25px;
+    text-align: right;
+}
+nav a {
+    padding: 0 25px;
+    border-right: 1px solid #FFF;
+}
+nav a:last-child {
+    border-right: none;
+}
+summary {
+    position: fixed;
+    top: 40%;
+    left: 50px;
+}
+summary h1 {
+    margin: 0;
+    letter-spacing: -2px;
+}
+summary h2 {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: normal;
+    letter-spacing: -1px;
+}
+summary a {
+    text-decoration: none;    
+}
+main {
+    position: absolute;
+    left: 450px;
+    top: 100px;
+    bottom: 0;
+}
+#code article {
+    display: inline-block;
+    width: 290px;
+    margin: 0 30px 30px 0;
+    padding: 10px;
+    border: 1px solid #EEEEEF;
+    border-left: 10px solid #EEEEEF;
+    vertical-align: top;
+}
+#code h3 {
+    margin: 0;
+}
+#photo article {
+    display: inline-block;
+    width: 320px;
+    margin: 0 30px 30px 0;
+}
+#photo article img {
+    max-width: 320px;
+}
+#music article {
+    display: inline-block;
+    width: 320px;
+    margin: 0 30px 30px 0;
+}
+#music article video {
+    max-width: 620px;
+}

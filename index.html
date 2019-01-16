@@ -1,451 +1,228 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-    <title>My Personal Website</title>
+        <title>Henrique Gogó</title>
 
-<!-- ############################## GOOGLE ANALYTICS ############################## --> 
-<script type="text/javascript"> 
- 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-15042231-1']);
-  _gaq.push(['_setDomainName', '.gogs.com.br']);
-  _gaq.push(['_trackPageview']);
- 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
- 
-</script> 
-<!-- ############################################################################## --> 
-</head>
-
-<style>
-    html {
-        font-family: sans-serif;
-        font-size: 12px;
-    }
-    body {
-        margin: 0;
-        padding: 30px 0;
-        background: #E5E5E5;
-        border-top: 7px solid #B50B1E;
-        box-shadow: inset 0 0 8px #FFF;
-    }
-
-    h2 {
-        margin: 0 0 10px;
-        text-transform: uppercase;
-        font-size: 20px;
-    }
-    h1:first-letter, 
-    h2:first-letter {
-        color: #B50B1E;
-    }
-
-    .body-container {
-        margin: 0 auto;
-        width: 960px;
-    }
-
-    .box {
-        margin: 0 0 30px;
-        padding: 10px;
-        vertical-align: top;
-        background: #FFF;
-        border-top: 7px solid #D5D5D5;
-    }
-    .column {
-        margin: 10px;
-        display: inline-block;
-        vertical-align: top;
-    }
-    
-    #profile .avatar {
-        float: left;
-        width: 100px;
-        margin: 0 8px 0 0;
-        vertical-align: middle;
-        border-radius: 999px;
-        -ms-border-radius: 999px;
-        -moz-border-radius: 999px;
-        -webkit-border-radius: 999px;
-        box-shadow: 0 0 10px #888;
-    }
-    #profile .name {
-        margin: 0;
-        font-size: 35px;
-        font-weight: bold;
-        text-transform: uppercase;
-        letter-spacing: -2px;
-        line-height: 32px;
-    }
-
-    #bio .container {
-        white-space: pre-wrap;
-    }
-
-    #sites {
-        text-align: right;
-    }
-
-    #designs .designs {
-        overflow: hidden;
-        overflow-x: auto;
-        white-space: nowrap;       
-    }
-    #designs img {
-        max-height: 150px;
-        vertical-align: middle;
-    }
-
-    .line-list {
-        margin: 0 -10px -10px;
-        padding: 0;
-        list-style: none;
-        overflow: hidden;
-        overflow-y: auto;
-    }
-    .line-list a {
-        display: block;
-        padding: 10px;
-        text-decoration: none;
-        color: #000;
-        border-top: 1px dotted #BBB;
-    }
-    .line-list a:hover {
-        background: #EEE;
-    }
-
-    .block-list {
-        padding: 0;
-    }
-    .block-list .item {
-        display: inline-block;
-    }
-    .block-list .item a {
-        display: inline-block;
-        margin: 10px;
-        padding: 10px;
-        width: 105px;
-        height: 70px;
-        font-size: 9px;
-        text-decoration: none;
-        color: #000;
-        vertical-align: top;
-        background: #FFF;
-        border: 1px solid #CCC;
-        border-radius: 4px;
-        -moz-border-radius: 4px;
-        -webkit-border-radius: 4px;
-        box-shadow: 0 0 5px #CCC;
-        -moz-box-shadow: 0 0 5px #CCC;
-        -webkit-box-shadow: 0 0 5px #CCC;
-    }
-    .block-list .item a:hover {
-        background: #EEE;
-    }
-    .block-list .item .title {
-        display: block;
-        margin: 0;
-        margin-bottom: 10px;
-        font-size: 15px;
-        font-weight: bold;
-        text-align: center;
-    }
-
-    #contact-form {
-        position: fixed;
-        margin: 0 10px;
-        -webkit-transition: all 0.5s ease-in-out;
-        -moz-transition: all 0.5s ease-in-out;
-        -ms-transition: all 0.5s ease-in-out;
-        transition: all 0.5s ease-in-out;
-        border: 2px solid #AAA;
-        bottom: -588px;
-    }
-    #contact-form:hover {
-        bottom: -130px;
-    }
-</style>
-
-<body>
-    <div class="body-container">
-        <div class="column" style="width: 290px">
-            <div id="profile">
-                <h1 class="name"></h1>
-            </div>
-            <div id="bio" class="box">
-                <div id="sites"></div>
-                <div class="container">Loading...</div>
-            </div>
-            <div id="designs" class="box">
-                <h2>Designs</h2>
-                <div class="container designs">
-                    Loading...
-                </div>
-            </div>
-            <div id="codes" class="box">
-                <h2>Codes and helpers</h2>
-                <ul class="container line-list" style="height: 350px">
-                    <li style="margin: 10px">Loading...</li>
+        <link rel="stylesheet" href="style.css" type="text/css" />
+    </head>
+    <body>
+        <a name="home"></a>
+        <nav>
+            <a href='#home'>Home</a>
+            <a href='#code'>Code</a>
+            <a href='#photo'>Photography</a>
+            <a href='#music'>Music</a>
+            <a href='#contact'>Contact</a>
+        </nav>
+        <summary>
+            <h1><a href='#home'>Henrique Gogó</a></h1>
+            <h2><a href='#code'>Developer</a>. <a href='#photo'>Photographer</a>. <a href='#music'>Musician</a>.</h2>
+        </summary>
+        <main>
+            <section id="code">
+                <a name="code"></a>
+                <h1># Code</h1>
+                <article>
+                    <h3>Simplest React Router</h3>
+                    <p>The simplest router for React apps</p>
+                    <a href='https://www.npmjs.com/package/simplest-react-router' target='_blank'>npm</a>
+                    <a href='https://github.com/henriquegogo/simplest-react-router' target='_blank'>GitHub</a>
+                </article>
+                <article>
+                    <h3>Instahash</h3>
+                    <p>Show last photos from a hashtag</p>
+                    <a href='https://github.com/henriquegogo/instahash' target='_blank'>GitHub</a>
+                </article>
+                <article>
+                    <h3>.vimrc</h3>
+                    <p>My vim custom configurations</p>
+                    <a href='https://gist.github.com/henriquegogo/763756' target='_blank'>GitHubGists</a>
+                </article>
+                <article>
+                    <h3>Dengo</h3>
+                    <p>Desktop Environment, go! Minimalist desktop environment for Ubuntu Mini</p>
+                    <a href='https://github.com/henriquegogo/dengo' target='_blank'>GitHub</a>
+                </article>
+                <article>
+                    <h3>DOMO</h3>
+                    <p>Nicely sweet DOM-Object-DOM with simplicity</p>
+                    <a href='https://henriquegogo.github.io/domo' target='_blank'>Demo</a>
+                    <a href='https://github.com/henriquegogo/domo' target='_blank'>GitHub</a>
+                </article>
+                <article>
+                    <h3>Sampy</h3>
+                    <p>A sampler sequencer in ASCII format</p>
+                    <a href='https://github.com/henriquegogo/sampy' target='_blank'>GitHub</a>
+                </article>
+                <article>
+                    <h3>No Shit!</h3>
+                    <p>Hidding shit things on internet. An ad blocker </p>
+                    <a href='https://github.com/henriquegogo/noshit' target='_blank'>GitHub</a>
+                </article>
+                <article>
+                    <h3>Lua Nova</h3>
+                    <p>Install a standalone Lua environment</p>
+                    <a href='https://gist.github.com/henriquegogo/c96cf1728196306360dd' target='_blank'>GitHubGists</a>
+                </article>
+                <article>
+                    <h3>GiWThen</h3>
+                    <p>Given, When, Then BDD mini-framework to acceptance tests in Javascript</p>
+                    <a href='https://github.com/henriquegogo/giwthen' target='_blank'>GitHub</a>
+                </article>
+                <article>
+                    <h3>Component</h3>
+                    <p>Generic component for rendering data.</p>
+                    <a href='https://gist.github.com/henriquegogo/723b340bbdb8b9a9c056f893a6e915dd' target='_blank'>GitHubGists</a>
+                </article>
+                <article>
+                    <h3>Easy Routes</h3>
+                    <p>Easy routes with javascript and hash</p>
+                    <a href='https://gist.github.com/henriquegogo/916406' target='_blank'>GitHubGists</a>
+                </article>
+                <article>
+                    <h3>KeyPower</h3>
+                    <p>HTML navigation with keyboard - jQuery addon</p>
+                    <a href='https://gist.github.com/henriquegogo/1132197' target='_blank'>GitHubGists</a>
+                </article>
+                <article>
+                    <h3>jqCidades</h3>
+                    <p>Plugin jQuery para carregar as cidades dos estados brasileiros - jQuery addon</p>
+                    <a href='https://github.com/henriquegogo/jqcidades' target='_blank'>GitHub</a>
+                </article>
+                <article>
+                    <h3>jqMask</h3>
+                    <p>Simple number mask jQuery plugin - jQuery addon</p>
+                    <a href='https://github.com/henriquegogo/jqmask' target='_blank'>GitHub</a>
+                </article>
+            </section>
+            <section id="photo">
+                <a name="photo"></a>
+                <a name="photography"></a>
+                <h1># Photography</h1>
+                <article>
+                    <a href='photos/29622880344_05ce6db90f_z.jpg' target='_blank'>
+                        <img src='photos/29622880344_05ce6db90f_z.jpg' />
+                        <legend>Sítio São Luís - Pacoti/CE</legend>
+                    </a>
+                </article>
+                <article>
+                    <a href='photos/29623060694_4cab2128e0_z.jpg' target='_blank'>
+                        <img src='photos/29623060694_4cab2128e0_z.jpg' />
+                        <legend>Harley Davidson - Fortaleza/CE</legend>
+                    </a>
+                </article>
+                <article>
+                    <a href='photos/29623851573_dd6c84f311_z.jpg' target='_blank'>
+                        <img src='photos/29623851573_dd6c84f311_z.jpg' />
+                        <legend>Sítio São Luís - Pacoti/CE</legend>
+                    </a>
+                </article>
+                <article>
+                    <a href='photos/29659735163_4b60465465_z.jpg' target='_blank'>
+                        <img src='photos/29659735163_4b60465465_z.jpg' />
+                        <legend>Dragão do mar - Fortaleza/CE</legend>
+                    </a>
+                </article>
+                <article>
+                    <a href='photos/29659742073_1ea0dd1145_z.jpg' target='_blank'>
+                        <img src='photos/29659742073_1ea0dd1145_z.jpg' />
+                        <legend>Dragão do mar - Fortaleza/CE</legend>
+                    </a>
+                </article>
+                <article>
+                    <a href='photos/29977214600_f823da518d_z.jpg' target='_blank'>
+                        <img src='photos/29977214600_f823da518d_z.jpg' />
+                        <legend>Beira Mar - Fortaleza/CE</legend>
+                    </a>
+                </article>
+                <article>
+                    <a href='photos/30168144111_9c110bbd29_z.jpg' target='_blank'>
+                        <img src='photos/30168144111_9c110bbd29_z.jpg' />
+                        <legend>Studio - Fortaleza/CE</legend>
+                    </a>
+                </article>
+                <article>
+                    <a href='photos/30238762336_d4439a59a8_z.jpg' target='_blank'>
+                        <img src='photos/30238762336_d4439a59a8_z.jpg' />
+                        <legend>Beira Mar - Fortaleza/CE</legend>
+                    </a>
+                </article>
+                <article>
+                    <a href='photos/30253776015_4e53532ed6_z.jpg' target='_blank'>
+                        <img src='photos/30253776015_4e53532ed6_z.jpg' />
+                        <legend>Beach Park - Aquiraz/CE</legend>
+                    </a>
+                </article>
+                <article>
+                    <a href='photos/30253881005_3a226014ce_z.jpg' target='_blank'>
+                        <img src='photos/30253881005_3a226014ce_z.jpg' />
+                        <legend>Old couple - Aquiraz/CE</legend>
+                    </a>
+                </article>
+                <article>
+                    <a href='photos/30253887275_8b565d5777_z.jpg' target='_blank'>
+                        <img src='photos/30253887275_8b565d5777_z.jpg' />
+                        <legend>Wisdom - Aquiraz/CE</legend>
+                    </a>
+                </article>
+                <article>
+                    <a href='photos/34479546666_1b34eccb4a_z.jpg' target='_blank'>
+                        <img src='photos/34479546666_1b34eccb4a_z.jpg' />
+                        <legend>Beira Mar - Fortaleza/CE</legend>
+                    </a>
+                </article>
+            </section>
+            <section id="music">
+                <a name="music"></a>
+                <h1># Music</h1>
+                <article>
+                    <audio src="music/Ricky Dalb - Good Waves.mp3" preload="auto" controls></audio>
+                    <legend>Good Waves</legend>
+                </article>
+                <article>
+                    <audio src="music/Uptown Funk (Ricky Dalb REMIX).mp3" preload="auto" controls></audio>
+                    <legend>Uptown Funk (REMIX)</legend>
+                </article>
+                <article>
+                    <audio src="music/Nerison Alves e Os Primitivos - Locked Out Of Heaven 2.mp3" preload="auto" controls></audio>
+                    <legend>Locked Out Of Heaven (playing bass guitar and backing vocals)</legend>
+                </article>
+                <article></article>
+                <article class='large'>
+                    <video src="music/Nerison Alves e Os Primitivos - Locked Out Of Heaven.webm" preload="auto" controls></video>
+                    <legend>Locked Out Of Heaven (bass guitar)</legend>
+                </article>
+            </section>
+            <section id="contact">
+                <a name="contact"></a>
+                <h1># Contact</h1>
+                <ul>
+                    <li>
+                        <a href="http://twitter.com/henriquegogo" target="_blank">http://twitter.com/henriquegogo</a>
+                    </li>
+                    <li>
+                        <a href="http://instagram.com/henriquegogo" target="_blank">http://instagram.com/henriquegogo</a>
+                    </li>
+                    <li>
+                        <a href="http://youtube.com/henriquegogo" target="_blank">http://youtube.com/henriquegogo</a>
+                    </li>
+                    <li>
+                        <a href="http://facebook.com/henriquegogo" target="_blank">http://facebook.com/henriquegogo</a>
+                    </li>
+                    <li>
+                        <a href="http://github.com/henriquegogo" target="_blank">http://github.com/henriquegogo</a>
+                    </li>
+                    <li>
+                        <a href="http://medium.com/@henriquegogo" target="_blank">http://medium.com/@henriquegogo</a>
+                    </li>
+                    <li>
+                        And I have a gmail. Guess what.
+                    </li>
                 </ul>
-            </div>
-        </div>
-        <div class="column" style="width: 626px">
-            <div id="slides" class="box">
-                <h2>Slides and presentations</h2>
-                <div class="container">
-                    Loading...
-                </div>
-            </div>
-            <div id="projects" class="box">
-                <h2>Projects</h2>
-                <ul class="container block-list">
-                    <li class="item">Loading...</li>
-                </ul>
-            </div>
-        </div>
-
-        <div id="contact-form">
-        <iframe src="https://docs.google.com/spreadsheet/embeddedform?formkey=dHVobnA4dkc1cm1fcjlFWGJYSXJJUUE6MQ" width="936" height="623" frameborder="0" marginheight="0" marginwidth="0">Carregando...</iframe>
-        </div>
-    </div>
-</body>
-
-<script type="text/html" id="projects_template">
-    <% for (i in projects) { %>
-        <li class="item">
-            <a href="<%= projects[i].link %>" target="_blank">
-                <span class="title"><%= projects[i].name %></span>
-                <span class="description"><%= projects[i].description %></span>
-            </a>
-        </li>
-    <% } %>
-</script>
-
-<script type="text/html" id="codes_template">
-    <% for (i in codes) { %>
-        <li><a href="<%= codes[i].link %>" target="_blank"><%= codes[i].description %></a></li>
-    <% } %>
-</script>
-
-<script type="text/html" id="designs_template">
-    <% for (i in designs) { %>
-        <a href="<%= designs[i].image %>" class="modal"><img src="<%= designs[i].thumb %>" title="<%= designs[i].description %>"></a>
-    <% } %>
-</script>
-
-<script type="text/html" id="sites_template">
-    <% for (i in sites) { %>
-        <a target="_blank" title="<%= sites[i].shortname %>" href="<%= sites[i].url %>"><img src="http://<%= sites[i].domain %>/favicon.ico" width="16"></a>
-    <% } %>
-</script>
-
-<script src="http://code.jquery.com/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-<script>
-// Simple JavaScript Templating
-// John Resig - http://ejohn.org/ - MIT Licensed
-(function(){
-  var cache = {};
-  
-  this.tmpl = function tmpl(str, data){
-    var fn = !/\W/.test(str) ?
-      cache[str] = cache[str] ||
-        tmpl(document.getElementById(str).innerHTML) :
-      
-      new Function("obj",
-        "var p=[],print=function(){p.push.apply(p,arguments);};" +
-        "with(obj){p.push('" +
-        str
-          .replace(/[\r\t\n]/g, " ")
-          .split("<%").join("\t")
-          .replace(/((^|%>)[^\t]*)'/g, "$1\r")
-          .replace(/\t=(.*?)%>/g, "',$1,'")
-          .split("\t").join("');")
-          .split("%>").join("p.push('")
-          .split("\r").join("\\'")
-      + "');}return p.join('');");
-  
-  return data ? fn( data ) : fn;
-  };
-})();
-</script>
-<script>
-    function View(model) {
-        this.renderPhoto = function() {
-            var avatar = $("<img class='avatar'>").attr("src", model.avatar);
-
-            $("#profile").prepend(avatar);
-        }
-
-        this.renderBio = function() {
-            $("#profile .name").html(model.name);
-
-            $("title").prepend(model.name + " - ");
-
-            $("#bio .container").html("")
-                     .append("<p>" + model.bio + "</p>")
-                     .append("<br style='clear: both'>");
-        }
-
-        this.renderSites = function() {
-            $("#sites").html(tmpl("sites_template", model));
-        }
-
-        this.renderSlides = function() {
-            $("#slides .container").html(model.slideshow);
-        }
-
-        this.renderCodes = function() {
-            $("#codes .container").html(tmpl("codes_template", model));
-        }
-
-        this.renderProjects = function() {
-            $("#projects .container").html(tmpl("projects_template", model));
-        }
-        
-        this.renderDesigns = function() {
-            $("#designs .container").html(tmpl("designs_template", model));
-        }
-    }
-
-    function Profile(data) {
-        var self = this;
-        var githubId = "5814e822e2c279be6ef4";
-        var githubSecret = "d118f66ea06b329581e4f805b23db32ad9bad70c";
-
-        self.fetchGithubRepos = function(callback) {
-            $.getJSON("https://api.github.com/users/" + data.github + "/repos?client_id=" + githubId + "&client_secret=" + githubSecret, function(resp) {
-                data.gravatar = resp[0].owner.gravatar_id;
-
-                self.projects = [];
-                
-                for (i in resp) {
-                    self.projects.push({
-                        name: resp[i].name,
-                        description: resp[i].description,
-                        link: resp[i].html_url,
-                    });
-                }
-
-                callback();
-            });
-
-            return self;
-        };
-
-        self.fetchGists = function(callback) {
-            $.getJSON("https://api.github.com/users/" + data.github + "/gists", function(resp) {
-                self.codes = [];
-
-                for (i in resp) {
-                    self.codes.push({
-                        description: resp[i].description,
-                        link: resp[i].html_url,
-                    });
-                }
-
-                callback();
-            });
-            
-            return self;
-        };
-
-        self.fetchGravatar = function(callback) {
-            $.getJSON("http://www.gravatar.com/" + data.gravatar + ".json?callback=?", function(resp) {
-                self.name = resp.entry[0].displayName;
-                self.bio = resp.entry[0].aboutMe;
-                self.avatar = resp.entry[0].thumbnailUrl + "?size=150";
-                self.sites = resp.entry[0].accounts;
-
-                callback();
-            });
-
-            return self;
-        };
-
-        self.fetchSlideshare = function(callback) {
-            self.slideshow = $('<iframe frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:none;" allowfullscreen webkitallowfullscreen mozallowfullscreen>').attr("src", "http://www.slideshare.net/" + data.slideshare + "/slideshelf")
-                         .attr("width", "606px")
-                         .attr("height", "470px");
-
-            callback();
-            
-            return self;
-        };
-
-        self.fetchFlickr = function(callback) {
-            $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?id=" + data.flickr + "&lang=pt-br&tags=portfolio&format=json&jsoncallback=?", function(resp) {
-                self.designs = [];
-                var items = resp.items;
-
-                for (i in items) {
-                    self.designs.push({
-                        thumb: items[i].media.m,
-                        image: items[i].media.m.replace("_m.", "."),
-                        link: items[i].link,
-                        description: items[i].title,
-                    });
-                }
-
-                callback();
-            });
-
-            return self;
-        };
-    }
-</script>
-
-<script>
-    $(document).on("click", ".modal", function() {
-        $(".modal-view").remove();
-
-        var imageSrc = $(this).attr("href");
-        var image = $("<img>").attr("src", imageSrc).attr("style", "box-shadow: 0 0 40px #000");
-        var modal = $("<div class='modal-view'>").attr("style","position: fixed; padding-top: 50px; top: 0; bottom: 0; left: 0; right: 0; z-index: 10; text-align: center; background: rgba(0, 0, 0, 0.5);");
-
-        modal.html(image)
-             .appendTo("body");
-
-        return false;
-
-    }).on("click", ".modal-view", function() {
-        $(this).remove();
-    });
-
-    $("#profile .name").html(location.hostname.split(".")[0]);
-</script>
-
-<script>
-    var me = new Profile({
-        github: "henriquegogo",
-        slideshare: "henriquegogo",
-        flickr: "34052227@N06"
-    });
-
-    var view = new View(me);
-
-    me.fetchGithubRepos(function() {
-        view.renderProjects();
-
-        me.fetchGravatar(function() {
-            view.renderPhoto();
-            view.renderBio();
-            view.renderSites();
-        });
-
-    }).fetchGists(function() {
-        view.renderCodes();
-        
-    }).fetchSlideshare(function() {
-        view.renderSlides();
-        
-    }).fetchFlickr(function() {
-        view.renderDesigns();
-    });
-</script>
+            </section>
+        </main>
+    </body>
 </html>
+
