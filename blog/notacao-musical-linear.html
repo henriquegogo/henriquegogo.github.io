@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<title>Notação Musical Linear</title>
+<meta name="date" content="2007-04-08">
+<meta name="author" content="Henrique Gogó">
+<meta name="url" content="https://henriquegogo.wordpress.com/2007/04/28/notacao-musical-linear/">
+<meta charset="utf-8">
+<script src="post.js"></script>
+
+* Eu havia digitado esse texto no Word, por isso, algumas coisas que estão escritas em UNICODE vieram com uma formatação diferente que altera o entendimento das colcheias e semicolcheias. Perdão
+
+INTRODUÇÃO
+
+Irei, de maneira simples e concisa definir o que vem a ser essa nova forma de grafia musical.
+Criei essa nova forma para satisfazer minhas necessidades pessoais, já que me aconteceu bastante (e ainda acontece) de surgir melodias em minha mente e eu não conseguir passá-las para o papel.
+É claro que não ignoro a existências de técnicas como a partitura, que admiro muito mas sempre dificuldades para dominar e também observei algumas falhas para meu uso prático.
+Também, antes de sequer eu pudesse desenhar as pautas, a melodia já tinha fugido da minha cabeça.
+Tendo em vista tudo isso, tentei elaborar um sistema em que eu pudesse anotar as melodias de uma forma que ela fosse escrita numa só linha, e que servisse mais para me fazer lembrar da melodia, não necessariamente que fosse fiel quanto à duração das notas, por exemplo.
+
+A EVOLUÇÃO DO DESENHO DOS SÍMBOLOS
+
+Observando uma escala diatônica no violão, pude perceber que ele formava um desenho muito simples.
+
+Como esse método estava sendo elaborado para o músico, fiz com finalidade de facilitar a leitura, a representação desse mesmo desenho pelo ângulo de quem toca o violão, e não de quem observa. Teremos então esse desenho:
+
+
+Note que as notas da escala, se dispostas desta forma, compõem um desenho de três linhas e de três colunas, como numa matriz. Isso me fez pensar em desenhar meu método por meio de matriz.
+
+Notei que se fosse desenhar essa grade para cada nota, acabaria perdendo muito tempo e minha meta de criar algo prático iria por água a baixo.
+Pensei então em simplificar os desenhos, levando como referência o ponto central do desenho (que também representava a tônica) e o caminho que a nota “percorria”. Com isso, pude chegar às seguintes representações:
+
+
+Perceba que agora , com até dois traços pode-se representar cada nota da escala. Simplifiquei mais ainda e cheguei ao desenho final:
+
+
+Pronto! Agora eu tinha chegado ao “ponto” que eu queria. Tinha o desenho das notas e podia escrevê-las em cima das sílabas de meus poemas, ou simplesmente escrevê-las retilineamente, para depois tocar e me lembrar. Com a prática, pude perceber que essa forma de notação é muito útil para quem toca instrumentos de corda. Sempre arremetendo ao desenho, é fácil encontrar cada nota. É como se os símbolos guiassem o dedo para o lugar certo, na escala.
+Não me dei por satisfeito. Essa representação só abrangia até, no máximo, a quinta para cima e a quarta da oitava abaixo. Fiz então um “segundo andar” na minha grade.
+
+
+Simplificando o desenho…
+
+
+Pronto, agora eu tinha duas escalas, mais a tônica da terceira escala, o que me permitia desenhar praticamente quase todas as melodias que me viessem à cabeça.
+
+NO COMPUTADOR (CARACTERES UNICODE)
+
+Quando fui escrever minhas melodias no computador, pude perceber um aspecto interessante: utilizando-me da codificação Unicode, encontrei todos os desenhos das representações das notas. Passarei a representar dessa forma, a partir daqui.
+
+╒ ╤ ╕ ┌ ┬ ┐ ┤ ┼ ├ └ ┴ ┘ ╘ ╧ ╛
+
+MÉTRICA E DURAÇÃO DAS NOTAS
+
+Com os símbolos criados (o pior trabalho), tive que criar uma forma que eu pudesse representar a métrica das notas, para que eu pudesse reproduzir mais tarde e lembrar da melodia inicial.
+Me inspirando no consagrado método das partituras, fiz a representação, ligando as notas através de traços ou parábolas. Dependendo de quantas notas estivessem sendo indicadas pelo traço, seria indicado também a duração de cada nota (mais ou menos parecido como a colcheia, semicolcheia, fusa…)
+
+Vamos ao exemplo:
+
+   
+└ └ └ └ └ └ └ ┘ ┼ ├ └
+
+Se você tentou tocar a melodia acima, pode perceber que se trata do início da música “Jingle Bell”. Cada nota “solta” deve ter a duração de uma semínima, e todas as notas ligadas devem ter também a duração de uma semínima, ou seja, no caso acima, cada nota ligada equivale a uma colcheia. O mesmo se dá se ligarmos mais de duas notas.
+
+ 
+└ └ └ └ └ └ └ └ └
+
+No exemplo agora citado, temos “semicolcheias”.
+Para se tornar mais usual ainda, criei representações do compasso:
+
+   
+║└ └ └ └ └ └ ║ └ ┘ ┼ ├ └ ′║
+
+O símbolo “′“ representa ausência de nota, e não necessariamente uma pausa. No caso proposto acima, a última nota teria uma duração de mínima ou de semínima seguida de pausa. Considero que tais detalhes vão depender da interpretação do músico.
+
+ACIDENTES
+
+Para o método não ficar incompleto, implantei também uma maneira de indicar acidentes. No caso desse sistema, só há um acidente: o sustenido, e esse é representado através de um ponto. Na representação manual (à lápis ou caneta), eu costumava colocar o ponto dentro do desenho da nota, nunca encostando nos traços, mas inserido no desenho. Na representação pelo computador, costumo colocar o ponto logo em seguida ao desenho.
+
+   
+└ ├.└ ├.└ ┤ ├ ┼ ┐
+
+Obs.: Se trata da frase inicial de “Pour Elise” de Beethoven.
+
+CONCLUSÃO
+
+Construída para ser um método de fácil aprendizagem, a Notação Musical Linear visa facilitar a vida do músico que quer escrever ou lembrar de uma melodia, ou simplesmente exercitar músicas conhecidas. Espero que você divulgue esse trabalho e sempre utilize no seu dia a dia!
+
+PARABÉNS PRA VOCÊ
+
+
+┬ ┬║┐ ‘ ┬ ┼║┤”
+Parabéns pra você
+
+┬ ┬║ ┐’┬ ├║┼ ┬’
+nessa data querida
+
+┬ ┬ ║ ┘’└ ┼║┤ ┐’
+muitas felicidades
+
+┴ ┴ ║└’┼ ├║ ┼ ┼”
+muitos anos de vida
