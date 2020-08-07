@@ -93,7 +93,7 @@
       </style>
       <nav>
         <a href="/">Home</a>
-        <a href="./index.html">Posts</a>
+        <a href="./">Posts</a>
         <a href="http://google.com?q=site:gogs.com.br">Search</a>
         <a href="mailto:henriquegogo@gmail.com">Contact</a>
       </nav>
