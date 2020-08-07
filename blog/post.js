@@ -9,6 +9,7 @@
     const image  = meta('image') || "https://gogs.com.br/images/banner.jpg";
 
     document.body.innerHTML = `
+      <meta name="viewport" content="width=device-width, initial-scale=1">
       <style>
         @import url('http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=en');
 
@@ -41,7 +42,7 @@
         }
         nav a {
           display: inline-block;
-          padding: 0 25px;
+          padding: 0 10px;
           line-height: 44px;
           text-decoration: none;
           text-transform: uppercase;
