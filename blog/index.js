@@ -33,6 +33,10 @@
           border: solid #888;
           border-width: 0 0 0 3px;
         }
+        hr {
+          border: none;
+          border-bottom: 2px solid #DDD;
+        }
 
         nav {
           width: 100%;
@@ -66,7 +70,7 @@
           color: #fff;
         }
         body > header h1 {
-          font-size: 5em;
+          font-size: 4em;
         }
 
         article {
@@ -91,6 +95,12 @@
           max-width: 100%;
         }
         article > div { white-space: pre-line }
+
+        @media (max-width: 600px) {
+          article > img {
+            display: none;
+          }
+        }
       </style>
       <nav>
         <a href="/">Home</a>
