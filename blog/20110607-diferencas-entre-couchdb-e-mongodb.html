@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<title>Diferenças entre CouchDB e MongoDB (controle de concorrência)</title>
+<meta name="date" content="2011-06-07">
+<meta name="author" content="Henrique Gogó">
+<meta name="url" content="https://henriquegogo-blog.tumblr.com/post/6283579737/diferen%C3%A7as-entre-couchdb-e-mongodb-controle-de">
+<meta charset="utf-8">
+<script src="index.js"></script>
+
+Quando se fala de bancos não relacionais, logo se vem dois nomes de peso: CouchDB e MongoDB.
+
+Há uma certa dúvida sobre por qual começar, qual é o melhor, qual a diferença entre um e outro. Cheguei a pesquisar alguns artigos e comparativos, e praticamente todas as conclusões que lia era apenas gostos ou contra-gostos.
+
+Eu não sei explicar o porquê, mas me parece que o MongoDB caiu no gosto dos que querem começar com NoSQL. Talvez pelo fato de poder enviar queries pela aplicação, e no CouchDB as consultas serem todas em views, totalmente ‘fora’ da aplicação.
+
+Não quero alimentar nenhum flame war, o que quero explicar aqui é só uma opinião pessoal que cheguei através de tentativas, testes, e conversas sobre quem estava usando e seus dilemas.
+
+Como conheço mais o CouchDB, posso dizer alguns pontos que se destacam:
+
+<h2>Orientado a documento</h2>
+Tá bom, isso não é uma particularidade do CouchDB, já que o MongoDB é bem similar, porém acredito que o CouchDB tem como vantagem a possibilidade de armazenar as views numa estrutura de pastas e arquivos, usando o CouchApp. Fica fácil commitar e inserir as views dentro de um projeto.
+
+<h2>Replicação Master/Master</h2>
+Replicação tanto no Couch quanto no Mongo são bem simples. Essa é a principal vantagem de se utilizar um banco NoSQl. Com o CouchDB, porém, essa replicação é master/master enquanto que no MongoDB é master/slave.
+
+<h2>MVCC (Multiversion concurrency control)</h2>
+Esta é a característica crucial que me faz decidir pelo CouchDB. Como para cada alteração ou Couch cria uma revisão, temos um ótimo controle de concorrência e integridade dos dados. Caso um servidor sofra uma alteração, na hora da replicação ele irá examinar as revisões e substituir pela mais recente.
+
+Isso é importante pois no MongoDB, por exemplo, como um update gera alteração no dado especificado, é necessário que haja um lock no banco. Um banco NoSQL com locks não me faz muito sentido.
+
+Como no CouchDB qualquer update, delete, geram uma nova revisão, tanto teremos uma boa resolução de conflitos na hora da replicação quanto evitamos que essa ação seja bloqueante.
+
+Retiro aqui trechos dos sites de ambos para exemplificar o que quero dizer:
+
+<blockquote>Database readers are never locked out and never have to wait on writers or other readers. Any number of clients can be reading documents without being locked out or interrupted by concurrent updates, even on the same document. CouchDB read operations use a Multi-Version Concurrency Control (MVCC) model where each client sees a consistent snapshot of the database from the beginning to the end of the read operation.
+
+<a href="http://couchdb.apache.org/docs/overview.html">http://couchdb.apache.org/docs/overview.html</a></blockquote>
+
+Traduzindo livremente:
+
+Consultas ao banco de dados (CouchDB) nunca são bloqueantes e não espera outras requisições de leitura ou escrita. Qualquer número de clientes pode ler documentos sem ser bloqueado ou interrompido por atualizações simultâneas, ainda que no mesmo documento. As operações de leitura do CouchDB utilizam um Modelo de Controle de Concorrência onde cada cliente vê uma cópia consistente do banco desde o início até o final da operação de leitura.
+
+Enquanto que…
+
+<blockquote>MongoDB uses a read/write lock for many operations. Any number of concurrent read operations are allowed, but typically only one write operation (although some write operations yield and in the future more concurrency will be added). The write lock acquisition is greedy: a pending write lock acquisition will prevent further read lock acquisitions until fulfilled.
+
+<a href="http://www.mongodb.org/display/DOCS/How+does+concurrency+work">http://www.mongodb.org/display/DOCS/How+does+concurrency+work</a></blockquote>
+
+Traduzindo livremente:
+
+MongoDB usa bloqueio de leitura/escrita para muitas operações. Qualquer número de operações de leitura simultâneas é permitido, mas normalmente é possível apenas uma operação de escrita (embora no futuro maior controle de concorrência irá ser adicionado). O bloqueio de escrita é voraz: o bloquei de escrita pendente evita futuros bloqueios nas requisições de leitura até que sejam realizados.
+
+Para mim isso é quase determinante. Para que usar um banco não relacional com bloqueio de escrita? Se quero algo novo, quero algo novo que seja eficaz o bastante para lidar com múltiplas operações de escrita.
