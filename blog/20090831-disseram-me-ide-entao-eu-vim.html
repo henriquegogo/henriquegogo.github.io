@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<title>Disseram-me IDE! Então eu VIM</title>
+<meta name="date" content="2009-08-31">
+<meta name="author" content="Henrique Gogó">
+<meta name="url" content="https://henriquegogo.wordpress.com/2009/08/31/disseram-me-ide-entao-eu-vim/">
+<meta charset="utf-8">
+<script src="index.js"></script>
+
+Existem muitos artigos e flamewars (principalmente entre vim x emacs) sobre “a melhor IDE para se desenvolver qualquer coisa”. Não vou dizer qual a melhor, até mesmo porque a melhor é a que você gostar mais, mas nesse artigo vou tratar de um programa bem rico e customizável: o VIM.
+
+De início, utilizar o vim parece um “parto”. Tudo é comando, as teclas de atalho mais conhecidas não funcionam, aquela interface simples chega a dar repulsa. Felizmente, isso passa. Nada do que um bom :help para aprender a mexer mo bichinho. Seguir o tutorial padrão do sistema é uma ótima ideia para se aprender o básico, e, daí, aproveitar o máximo que esse editor de textos pode proporcionar.
+
+Uma das características principais do vim é sua customização. Praticamente tudo é customizável, e até programável. A possibilidade de fazer plugins e outras coisas mais como “syntax highlight” vão incrementando sua área de edição a ponto de deixar da maneira que você quiser.
+
+Já utilizo o vim há um tempo, inicialmente para montar HTML + CSS e atualmente para programar em Rails. Praticamente abandonei o Eclipse e o Aptana para utilizar somente o vim. Para chegar a tal ponto de “migrar” de IDE, tive que passar por um relativo processo de customização do editor para que ele ficasse “no ponto”. Existe um arquivo chamado “.vimrc” na pasta raiz da aplicação. É lá que você vai aplicar as alterações propostas nesse artigo.
+
+O arquivo que disponibilizo é uma versão customizada do vim criada por mim, e está todo comentado.
+
+Inicialmente, recomendo a instalação dos seguintes plugins:
+
+NERDTree :: Lista os arquivos em árvore
+colorsel :: Seleciona uma cor hexadecimal
+html_autoclosetag :: Fecha as tags HTML com seu “par”
+ir_black :: Color scheme elegante e organizado
+Depois, instale um corretor ortográfico da língua portuguesa. Para isso você precisará ter a versão 7 ou superior do vim.
+
+Faça o download do dicionário
+Descompacte o arquivo
+No vim, digite o comando ‘:mkspell pt /caminho/do/descompactamento/pt_BR’
+Copie o arquivo gerado para a pasta ~/.vim/spell/
+Ative a correção: ‘:set spell’
+Escolha o dicionário: ‘:set spelllang=pt’
+Pronto, esses são os plugins que eu recomendo para a utilização do vim e transformá-lo numa verdadeira IDE, mas não basta só isso. Vamos agora para o principal: o arquivo de configuração .vimrc. Eu configurei um arquivo que pode ser utilizado tanto no vim para windows como na versão linux. Peguei um apanhado de configurações da internet e personalizei ao meu gosto. Acredito que provavelmente seja do gosto da maioria.
+
+Se você utiliza o vim no Windows, adicione seguinte linha no início do arquivo:
+
+source $VIMRUNTIME/vimrc_example.vim
