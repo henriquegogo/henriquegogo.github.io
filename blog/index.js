@@ -6,6 +6,7 @@
   window.onload = function() {
     const date   = meta('date') ? new Date(meta('date')).toLocaleDateString() : '';
     const author = meta('author');
+    const url = meta('url');
     const image  = meta('image') || "https://gogs.com.br/images/banner.jpg";
 
     document.body.innerHTML = `
@@ -113,6 +114,7 @@
       </header>
       <article>
         ${author ? '<i>Published '+date+' by '+author+'</i>' : ''}
+        ${url ? '<i>(<a href="'+url+'">original</a>)</i>' : ''}
         ${meta('image') ? '<img src="'+image+'" />' : ''}
         <div>
           ${document.body.innerHTML}
