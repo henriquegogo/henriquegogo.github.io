@@ -30,7 +30,7 @@ html::after {
 body {
   color: var(--dark-blue);
   margin: 0;
-  min-height: calc(100vh - 140px);
+  min-height: calc(100vh - 170px);
   padding: 30px max(10px, calc(50vw - 400px));
   position: relative;
 }
