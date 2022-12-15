@@ -2,6 +2,18 @@
   const homeUrl = "index.html";
   const authorUrl = "mailto:henriquegogo@gmail.com";
 
+  document.write(`
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148425923-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-148425923-1');
+    </script>
+  `);
+
   const header = document.createElement("header");
   header.innerHTML = `
     <a href="${homeUrl}" rel="home">☀ THE GOGSLAND</a>
@@ -57,11 +69,13 @@
   }
 
   window.onload = function () {
+    document.body.prepend(header);
+    document.body.append(footer);
+
     Object.assign(document.querySelector("a[rel='author']") || {}, {
       href: authorUrl,
     });
-    document.body.prepend(header);
-    document.body.append(footer);
+
     highlight("pre");
   };
 })();
