@@ -85,6 +85,17 @@ h1, h2, h3, h4, h5, h6 {
 h2, h3, h4, h5, h6 {
   color: var(--light-blue);
 }
+h2 time {
+  font-style: italic;
+  font-size: 0.7em;
+  font-weight: normal;
+}
+h2 time::before {
+  content: "(";
+}
+h2 time::after {
+  content: ")";
+}
 
 p {
   font-size: 1.1em;
