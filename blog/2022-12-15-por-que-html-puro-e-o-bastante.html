@@ -5,30 +5,29 @@
 <link rel="stylesheet" href="style.css">
 <script src="script.js"></script>
 
-<title>Mais um blog do zero. Código e conteúdo.</title>
+<title>De volta ao básico - Por que HTML puro é o bastante</title>
 
-<h1>Mais um blog do zero. Código e conteúdo.</h1>
-<h2>Este não é apenas um post de "voltei", mas uma ode à simplicidade e às raízes da internet</h2>
+<h1>De volta ao básico - Por que HTML puro é o bastante</h1>
+<h2>Uma ode à simplicidade e às raízes da internet</h2>
 <a rel="author" href="">Henrique Gogó</a>
 <time>2022-12-15</time>
 
 <p>Possivelmente as coisas mais postadas em blogs desde que os inventaram são as tradicionais postagens "estou de volta" ou "agora vou escrever com mais rotina".
 
-<img style="float:right;margin:10px" src="images/henriquegogo.jpg" />
+<img style="float:right" src="images/henriquegogo.jpg" />
 
 <p>Este possivelmente é mais um destes. Mas deixe-me explicar antes de se tornar só mais um "blog de único post
 <p>Sempre fui uma pessoa minimalista. Desde os meus tempos mais remotos com o IBM 486SX que tínhamos em casa, eu buscava aplicativos e joguinhos que coubessem em apenas num disquete. "Se passar de 1.44MB, é grande e não vale a pena".
-<p>Nessa minha jornada pela internet, já iniciei (e abandonei) diversos outros blogs. Meu primeiro provavlemente foi no Blogspot. Com a popularidade do wordpress.com, não havia quem não tivesse um, e por muito tempo foi a plataforma principal de criação e publicação de blogs
+<p>Nessa minha jornada pela internet, já iniciei (e abandonei) diversos outros blogs. Meu primeiro provavelmente foi no Blogspot. Com a popularidade do wordpress.com, não havia quem não tivesse um, e por muito tempo foi a plataforma principal de criação e publicação de blogs
 <p>Nesse tempo fui muito produtivo em posts. Foquei em posts de tecnologia e nessa época estava bem envolvido com a comunidade local de desenvolvimento. Reviews de eventos de tecnologia locais, versões novas de softwares, dicas de linux, tudo o que "vinha na telha".
 <p>Mas o verme do "early adopter" não larga a gente e assim que surgiu o Tumblr, não havia quem não usasse. Era como não ter uma conta no Instagram.
 <p>No Tumblr continuei minhas postagens técnicas, mas já com menos gás do que fazia no Wordpress. Dessa vez integrei uma forma de contato direto comigo pelo site e numa postagem que fiz sobre CouchDB, fui chamado para submeter um paper para o The Developers Conference. Funcionou! Meu blog estava finalmente "me deixando famoso".
 <p>Mas como tudo na vida, produzir exige tempo, e esse foi um tempo e pouco depois veio casamento. Um ano depois minha primeira filha. Depois contas. E "tempo livre" passou a ser destinado para outras coisas.
 <p>Mas o verme da curiosidade...
 
-</p><br>
 <h2>Geradores estáticos de páginas</h2>
 
-<p>Jerkyll, Hugo, Next.js, Jamstack e tantas sopas de letrinhas. Mas eu sou um cara minimalista, lembra? O que não signifca que não seja um cara que goste de reinventar a roda.
+<p>Jerkyll, Hugo, Next.js, Jamstack e tantas sopas de letrinhas. Mas eu sou um cara minimalista, lembra? O que não significa que não seja um cara que goste de reinventar a roda.
 <p>Nos meus tempos de "programar HTML" offline, lembro que muito pouca tag era necessária para criar uma página realmente válida. Essencialmente muito menos do que pensamos. Sequer a tag <code>html</code> é necessária, embora o atributo lang seja altamente recomendado.
 <p>Abaixo o mínimo necessário para se ter uma página html válida:
 
@@ -41,7 +40,7 @@
 <p>Isso mesmo, sem <code>head body</code>. Na verdade o navegador irá se encarregar de fazer o "trabalho sujo". E sim, este é o mínimo que gera um código válido para os critérios da W3C.
 <p>Mas o mínimo não significa o melhor. Como sei que irei escrever em português e nossa língua possui acentos e caracteres que podem dar problemas de encoder dependendo do navegador dos visitantes, faz-se necessário adicionar uma declaração de charset.
 <p>Outra questão que nos dias de hoje se faz necessário é criar um viewport compatível com celulares. Não há nada mais chato do que abrir aquele site com letras minúsculas no celular.
-<p>Outra coisa que é óbvia: um site sem conteúdo não é propriamente um site com utilidade. A questão aqui é que não nacessariamente precisamos declarar um body e toda a sua estrutura de aninhamento. Basta sair escrevendo abaixo do título utilizando tags simples de html.
+<p>Outra coisa que é óbvia: um site sem conteúdo não é propriamente um site com utilidade. A questão aqui é que não necessariamente precisamos declarar um body e toda a sua estrutura de aninhamento. Basta sair escrevendo abaixo do título utilizando tags simples de html.
 
 <pre>
 &lt;!DOCTYPE html&gt;
@@ -93,7 +92,6 @@ I hope you like it!
 <p>Convenhamos, não é lá grande coisa escrever tags HTML uma vez que temos as facilidades que apresentei acima, como deixar tags abertas e o mínimo necessário. Quanto mais conteúdo houver, menos aquele pequeno início importa. São poucas linhas que são praticamente obrigatórias em qualquer site, então elas nunca mudarão.
 <p>Um post mínimo nunca vai ser muito menos do que o código apresentado acima.
 
-</p><br>
 <h2>Só conteúdo não basta</h2>
 
 <p>Apesar de ser incontestavelmente o principal, nem só de conteúdo se faz um site. Estilo, alguma dinamicidade, elementos de navegação se fazem necessário.
@@ -118,8 +116,7 @@ I hope you like it!
 
 <p>Pronto, agora chegamos no nosso cabeçalho definitivo. Tudo o que está acima desta linha branca separando o conteúdo do header precisa ser repetido em todas as páginas do site. Entenda isso como uma convenção. São 7 linhas que jamais mudarão (exceto o conteúdo de <code>title</code> que muda para cada post). Aconselho criar um template vazio para daí copiar e criar novos posts.
 
-</p><br>
 <h2>Mas onde eu quero chegar?</h2>
 
 <p>Este site que você está lendo agora foi feito exatamente assim. Longe de ser só mais um post de "estou de volta, vou tentar ser mais fiel às postagens", quero usar esse espaço para mostrar essas pequenas "reinvenções da roda", meus pequenos projetos e tentativas as quais costumeiramente não mostro.
-<p>Te convido a olhar o código fonte (CTRL + U). Tem muita coisa legal por debaixo do capô. Sabe esses trechos de código com syntax highlight? Eu criei um syntax highliter especialmente para este site. Dá uma checada lá no script.js. Será esse um próximo post?
+<p>Te convido a olhar o código fonte (CTRL + U). Tem muita coisa legal por debaixo do capô. Sabe esses trechos de código com syntax highlight? Eu criei um syntax highlighter especialmente para este site. Dá uma checada lá no script.js. Será esse um próximo post?

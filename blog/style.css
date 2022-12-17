@@ -67,6 +67,14 @@ a[rel="home"]::first-letter {
   vertical-align: sub;
 }
 
+img {
+  margin: 10px;
+}
+header img,
+footer img {
+  margin: 0;
+}
+
 nav {
   text-transform: uppercase;
 }
