@@ -16,7 +16,21 @@
 
   const header = document.createElement("header");
   header.innerHTML = `
-    <a href="${homeUrl}" rel="home">☀ THE GOGSLAND</a>
+    <a href="${homeUrl}" rel="home">
+      <svg viewBox="0 0 100 100" style="margin:-5px 5px 0 0; height:25px; vertical-align:middle; fill:#335">
+        <mask id="circle">
+          <circle cx="50" cy="50" r="50" fill="#FFF" />
+        </mask>
+        <g mask="url(#circle)">
+          <circle cx="50" cy="50" r="50" />
+          <circle cx="53" cy="50" r="25" fill="#FFF" />
+          <rect x="0" y="0" width="100" height="50" />
+          <circle cx="38" cy="30" r="8" fill="#FFF" />
+          <circle cx="70" cy="30" r="5" fill="#FFF" />
+        </g>
+      </svg>
+      THE GOGSLAND
+    </a>
     <nav>
       <a href="${homeUrl}">Articles</a>
       <a href="https://github.com/henriquegogo" target="_blank">Projects</a>
@@ -49,7 +63,7 @@
                 /([^>])(")(.*?)(")|([^>])(')(.*?)(')/g,
                 "$1<span style =color:#afd700>$2$3$4</span>"
               ).replace( // Tag open
-                /&lt;([^!--]\w*)/g,
+                /&lt;(\w*)/g,
                 "<span style =color:#87afd7>&lt;</span><span style =color:#8787af>$1</span>"
               ).replace( // Tag close
                 /(\w*)&gt;/g,
@@ -63,13 +77,13 @@
                 /(\/\*.+\*\/)/gs,
                 "<span style =color:#808080>$1</span>"
               ).replace( // Declarations
-                /([^\w'"]|^)(struct|var|let|const|new|def|fn|class|function|int|enum|void|float|char|str|string|public|pub|private|interface|impl|^from|import|^with)([^\w'"])/g,
+                /([^\w]|^)(struct|var|let|const|new|def|fn|class|function|int|enum|void|float|char|str|string|public|pub|private|interface|impl|from|import|with)([^\w])/g,
                 "$1<span style =color:#87afd7>$2</span>$3"
               ).replace( // Statements
-                /([^\w'"]|^| )( => | === | == | != | <= | >= | \+= | -= | \+ | - | \/ | \* | = |return|if|else|elsif|then|switch|case|default|while|for|foreach|in|of|or|and|not|try|except|finally|throw|catch)([^\w'"])/g,
+                /([^\w]|^| )(=>|===|==|!=|<=|>=|\+=|-=|\+|-|\/|\*|=|return|if|else|elsif|then|switch|case|default|while|for|foreach|in|of|or|and|not|try|except|finally|throw|catch)([^\w])/g,
                 "$1<span style =color:#8787af>$2</span>$3"
               ).replace( // Consts and keywords
-                /([^\w'"]|^)(true|false|True|False|None|Null|NULL|this|self|document|window|console|Math|[A-Z_]{3,})([^\w'"])/g,
+                /([^\w]|^)(true|false|True|False|None|Null|NULL|this|self|document|window|console|Math|[A-Z_]{3,})([^\w])/g,
                 "$1<span style =color:#ff8700>$2</span>$3"
               ).replace( // Functions
                 /(\w+)\(/g,

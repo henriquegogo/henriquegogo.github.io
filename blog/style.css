@@ -112,13 +112,21 @@ p {
 }
 
 pre {
-  margin: 10px 0;
-  padding: 25px;
   background: var(--dark-blue);
   color: #FFF;
   display: block;
   font-family: monospace;
+  margin: 10px 0;
+  padding: 25px;
   white-space: pre-wrap;
+}
+
+code {
+  border-radius: 4px;
+  border: 2px solid #DDD;
+  font-weight: bold;
+  padding: 2px 4px;
+  vertical-align: bottom;
 }
 
 a[rel="author"],
@@ -136,7 +144,8 @@ a[rel="author"] ~ time::after {
   content: ")";
 }
 
-a {
+a,
+a * {
   color: var(--light-blue);
   text-decoration: none;
   transition: color 0.2s linear;
@@ -152,7 +161,7 @@ hr {
   border-bottom: 3px solid var(--light-bg);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 500px) {
   header {
     padding: 0 10px;
   }
